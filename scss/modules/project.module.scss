@@ -1,0 +1,236 @@
+.project {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__wrapper {
+    width: 100%;
+    margin: 0 auto 70px auto;
+    position: relative;
+    height: 380px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__aboutProject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0 120px;
+  }
+
+  &__topWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(50px, 200px);
+    grid-template-areas:
+            "about skills"
+            "add skills";
+    width: calc(100% - 2 * 24px);
+    max-width: 1060px;
+    column-gap: 80px;
+    row-gap: 44px;
+  }
+
+  &__aboutItem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-area: about;
+  }
+
+  &__addItem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-area: add;
+  }
+
+  &__aboutTitle {
+    margin: 0 0 10px;
+    padding: 0;
+    font-weight: 500;
+    font-size: 31px;
+    line-height: 40px;
+    letter-spacing: 0.64px;
+    color: #161513;
+  }
+
+  &__paragraph {
+    margin: 0 0 10px;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #161513;
+    letter-spacing: 0.2px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__bottomLine {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    width: calc(100% - 2 * 24px);
+    max-width: 1280px;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+
+  &__skills {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__skillsGroup {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0 0;
+    padding: 0;
+    column-gap: 30px;
+    row-gap: 40px;
+  }
+
+  &__skillsItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  &__skillsTitle {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+
+  &__stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 70px;
+  }
+
+  &__statsItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  &__statsTitle {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #4B98F2;
+  }
+
+  &__statsValue {
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    color: #F2F1EF;
+  }
+
+  &__lineButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  &__lineButton {
+    margin: 0;
+    padding: 9px 27px;
+    background: none;
+    cursor: pointer;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+
+    &_full {
+      margin: 0;
+      padding: 9px 27px;
+      background: none;
+      cursor: pointer;
+      border: 1px solid #fff;
+      color: #161513;
+      background: #F2F1EF;
+      font-weight: 400;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+
+    }
+  }
+
+  &__imageWrapper {
+    position: absolute;
+    height: 380px;
+    overflow: hidden;
+  }
+
+  &__workLogo {
+    position: absolute !important;
+    z-index: 2;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 20.46%, rgba(0, 0, 0, 0.6) 42.19%, rgba(0, 0, 0, 0.8) 69.27%, rgba(0, 0, 0, 0.96) 100%);
+
+  }
+
+  &__imageWork {
+    object-fit: cover;
+    z-index: -1 !important;
+  }
+
+  &__swiperWrapper {
+    max-width: 1060px;
+  }
+
+  &__swiperSlide {
+    width: 100%;
+    max-width: 1060px;
+  }
+
+
+}
