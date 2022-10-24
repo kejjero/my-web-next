@@ -96,9 +96,9 @@
   }
 
   &__skillsGroup {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 1fr);
     flex-wrap: wrap;
     margin: 20px 0 0;
     padding: 0;
@@ -110,8 +110,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+
     gap: 15px;
+    text-align: center;
   }
 
   &__skillsTitle {
@@ -225,12 +227,14 @@
 
   &__swiperWrapper {
     max-width: 1060px;
+    width: 100%;
   }
 
   &__swiperSlide {
-    width: 100%;
-    max-width: 1060px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-
 
 }

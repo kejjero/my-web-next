@@ -9,6 +9,8 @@ import {
 } from "../images/skills"
 
 import {mockup_1, mockup_2, mockup_3, mockup_4, mockup_5} from "../images/acro"
+import logoAcro from  "../images/workLogo.svg";
+
 
 export const ARRAY_MENU = [
     {name: 'Обо мне'},
@@ -51,8 +53,34 @@ export const SKILLS = [
 
 export const mockupsAcro = [
     {mockup: mockup_1},
-    {mockup: mockup_2},
-    {mockup: mockup_3},
-    {mockup: mockup_4},
-    {mockup: mockup_5},
+]
+
+export const projects = [
+    {
+        id: "acro-furniture",
+        about: "Онлайн магазин мебели с множеством фильтров выбора товара и оформлением онлайн заказа. Проработал архитектурную концепцию проекта под выбранный стек технологий, а также нарисовал UX/UI дизайн.",
+        description: "По своей инициативе собрал команду из 4 Frontend разработчиков. Проработал архитектурную концепцию проекта под выбранный стек технологий, а также нарисовал UX/UI дизайн.",
+        skills: [
+            {icon: ts, title: "TypeScript"},
+            {icon: redux, title: "Redux Toolkit"},
+            {icon: react, title: "React"},
+            {icon: jest, title: "Jest + Enzyme"},
+            {icon: router, title: "React Router"},
+            {icon: form, title: "React Hook Form"},
+            {icon: axios, title: "Axios"},
+            {icon: scss, title: "SCSS"},
+            {icon: mui, title: "Material UI"},
+        ],
+        intro: {
+            statusItems: [
+                {title: "Дата разработки", value: "сентябрь 2022"},
+                {title: "Категория", value: "Fullstack"},
+                {title: "Статус", value: "MVP"}
+            ],
+            imageIntro: "",
+            linkGitHub: "https://github.com/arco-furniture/arco-furniture",
+            linkDemo: "https://arco-furniture.github.io/arco-furniture/",
+            imageLogo: logoAcro,
+        },
+    }
 ]

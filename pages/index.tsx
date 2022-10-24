@@ -4,24 +4,18 @@ import Skills from "../sections/Skills";
 import Service from "../sections/Service";
 import Portfolio from "../sections/Portfolio";
 import Contacts from "../sections/Contacts";
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
+import {Parallax, ParallaxLayer} from '@react-spring/parallax'
 
-const Index = ({isOpen, setIsOpen}) => {
+const Index = () => {
 
     return (
         <>
-
-                <Intro/>
-
-                <About/>
-
-                <Skills/>
-
-                <Service/>
-
-                <Portfolio/>
-
-                <Contacts/>
+            <Intro/>
+            <About/>
+            <Skills/>
+            <Service/>
+            <Portfolio/>
+            <Contacts/>
         </>
     )
 }
