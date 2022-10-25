@@ -53,6 +53,8 @@ export const SKILLS = [
 
 export const mockupsAcro = [
     {mockup: mockup_1},
+    {mockup: mockup_2},
+    {mockup: mockup_3},
 ]
 
 export const projects = [
@@ -65,11 +67,11 @@ export const projects = [
             {icon: redux, title: "Redux Toolkit"},
             {icon: react, title: "React"},
             {icon: jest, title: "Jest + Enzyme"},
+            {icon: scss, title: "SCSS"},
+            {icon: mui, title: "Material UI"},
             {icon: router, title: "React Router"},
             {icon: form, title: "React Hook Form"},
             {icon: axios, title: "Axios"},
-            {icon: scss, title: "SCSS"},
-            {icon: mui, title: "Material UI"},
         ],
         intro: {
             statusItems: [
