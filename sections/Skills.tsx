@@ -5,11 +5,13 @@ import React, {useEffect, useRef, useState} from "react";
 import {SKILLS} from "../utils/constants";
 import MySkills from "../components/MySkills";
 import { motion } from "framer-motion";
+import SwiperSkills from "../components/SwiperSkills";
 
 const Skills: React.FC = () => {
     const buttons  = [{title: "Frontend"}, {title: "Backend"}, {title: "Графика"}]
     const [activeIndex, setActiveIndex] = useState(0);
     const [filterSkills, setFilterSkills] = useState([]);
+    const [width, setWidth] = useState<number>();
 
     const onClickButton = (i) => {
         setActiveIndex(i)
@@ -18,6 +20,7 @@ const Skills: React.FC = () => {
     useEffect(() => {
         const currentSkills = SKILLS.filter((item) => item.activeIndex === activeIndex)
         setFilterSkills(currentSkills)
+        setWidth(window.screen.width)
     }, [activeIndex])
 
     const sectionAnimation = {
@@ -38,7 +41,7 @@ const Skills: React.FC = () => {
             id="skills"
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.4, once: true}}
+            viewport={{ amount: width > 700 ? 0.4 : 0.1, once: true}}
             className={section.section}
             custom={1}
             variants={sectionAnimation}
@@ -59,7 +62,13 @@ const Skills: React.FC = () => {
                             ))
                         }
                     </div>
-                    <MySkills filterSkills={filterSkills}/>
+                    {
+                        width > 520 ?
+                            <MySkills filterSkills={filterSkills}/>
+                            :
+                            <SwiperSkills filterSkills={filterSkills} />
+
+                    }
                 </div>
             </div>
         </motion.section>

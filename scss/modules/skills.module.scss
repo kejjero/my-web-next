@@ -6,6 +6,10 @@
     width: calc(100% - 2 * 8px);
   }
 
+  @media screen and (max-width: 525px) {
+   width: 100%;
+  }
+
   &__buttonGroup {
     display: flex;
     justify-content: center;
@@ -31,6 +35,10 @@
       justify-content: center;
       box-sizing: border-box;
       padding: 12px;
+
+      @media screen and (max-width: 525px) {
+        padding: 0;
+      }
     }
   }
 
@@ -44,8 +52,8 @@
     text-align: center;
   }
 
-  &__icon {
-
+  &__swiper {
+    margin-top: 60px;
   }
 
 }

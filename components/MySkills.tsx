@@ -1,7 +1,7 @@
 import {motion} from "framer-motion";
 import skills from "../scss/modules/skills.module.scss";
 import Image from "next/image";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const MySkills = ({filterSkills}) => {
     const [isHovered, setHovered] = useState(false)
@@ -17,7 +17,6 @@ const MySkills = ({filterSkills}) => {
         })
     }
 
-    console.log(isHovered)
 
     return(
         <motion.ul
@@ -27,6 +26,8 @@ const MySkills = ({filterSkills}) => {
             viewport={{ amount: 0.7}}
             className={skills.skills__skillsGroup}
         >
+
+
             {
                 filterSkills.map((item, i) => (
                     <motion.li
