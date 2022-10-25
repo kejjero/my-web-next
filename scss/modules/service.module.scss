@@ -11,6 +11,15 @@
     padding: 70px 0 170px;
   }
 
+  @media screen and (max-width: 520px) {
+    margin-top: 120px;
+    padding: 70px 0 80px;
+  }
+
+  @media screen and (max-width: 400px) {
+    margin-top: 70px;
+  }
+
   &__wrapper {
     max-width: 1060px;
     margin: 0 auto;
@@ -40,6 +49,10 @@
       gap: 70px;
     }
 
+    @media screen and (max-width: 520px) {
+      gap: 20px;
+    }
+
   }
 
   &__card {
@@ -52,6 +65,12 @@
     @media screen and (max-width: 768px) {
       border: none;
     }
+
+    @media screen and (max-width: 520px) {
+      gap: 10px;
+      padding: 8px;
+    }
+
   }
 
   &__cardTitle {

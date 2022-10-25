@@ -11,6 +11,10 @@
     margin-top: 120px;
   }
 
+  @media screen and (max-width: 520px) {
+    margin-top: 80px;
+  }
+
   &__wrapper {
     max-width: 1060px;
     margin: 0 auto;
@@ -43,6 +47,7 @@
     line-height: 32px;
     letter-spacing: 1.44px;
     text-transform: uppercase;
+    z-index: 1000;
 
     &_black {
       margin: 10px 0 0;
