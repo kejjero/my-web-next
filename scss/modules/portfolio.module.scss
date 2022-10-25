@@ -57,6 +57,10 @@
   &__imageWrapper {
     min-width: 460px;
     min-height: 310px;
+
+    @media screen and (max-width: 520px) {
+      min-width: 320px;
+    }
   }
 
   &__workHeader {

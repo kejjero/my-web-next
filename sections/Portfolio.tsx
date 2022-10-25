@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 const Portfolio: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [filterWorks, setFilterWorks] = useState([]);
+    const [width, setWidth] = useState<number>();
     const buttons  = [{title: "Все"}, {title: "Frontend"}, {title: "Fullstack"}]
     const works = [
         {title: 'Онлайн-магазин мебели', tag: 'Frontend', image: work1, linkId: "acro-furniture"},
@@ -44,6 +45,7 @@ const Portfolio: React.FC = () => {
             }
         })
         setFilterWorks(currentWorks)
+        setWidth(window.screen.width)
     }, [activeIndex])
 
 
@@ -51,7 +53,7 @@ const Portfolio: React.FC = () => {
         <motion.section
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.2, once: true}}
+            viewport={{ amount: width > 700 ? 0.4 : 0.1, once: true}}
             className={section.section}
             custom={1}
             variants={sectionAnimation}
