@@ -2,7 +2,7 @@ import contacts from "../scss/modules/contacts.module.scss"
 import TopSection from "../components/TopSection";
 import hash from "../images/hash.svg"
 import Image from "next/image";
-import React from "react";
+import React, {useEffect} from "react";
 import {motion} from "framer-motion";
 import {useForm} from "react-hook-form";
 import s from "../scss/modules/contacts.module.scss";
