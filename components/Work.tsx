@@ -5,6 +5,7 @@ import React, {useEffect, useState} from "react";
 import {IWork} from "../types/components";
 import Link from "next/link";
 import workLogo from "../images/workLogo.svg"
+import { motion } from "framer-motion";
 
 const Work: React.FC<IWork> = ({item}) => {
     const [widthImage, setWidthImage] = useState<number>();
@@ -37,9 +38,28 @@ const Work: React.FC<IWork> = ({item}) => {
 
     }, [onClickWork])
 
+    const sectionAnimation = {
+        hidden: {
+            y: 30,
+            opacity: 0
+        },
+        visible: custom  => ({
+            y: 0,
+            opacity: 1,
+            transition: {delay: custom * 0.1}
+        })
+    }
+
 
     return (
-        <li className={s.portfolio__work}>
+        <motion.li
+            className={s.portfolio__work}
+            animate="visible"
+            whileInView="visible"
+            viewport={{ amount: 0.7}}
+            custom={5}
+            variants={sectionAnimation}
+        >
             <div className={s.portfolio__imageWrapper}>
                 {
                     widthWindow < 768 &&
@@ -74,7 +94,7 @@ const Work: React.FC<IWork> = ({item}) => {
                     </Link>
                 </div>
             }
-        </li>
+        </motion.li>
     )
 }
 

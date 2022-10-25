@@ -217,7 +217,6 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.4) 20.46%, rgba(0, 0, 0, 0.6) 42.19%, rgba(0, 0, 0, 0.8) 69.27%, rgba(0, 0, 0, 0.96) 100%);
-
   }
 
   &__imageWork {
@@ -235,6 +234,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-height: 600px;
+    overflow: hidden;
+    border-radius: 5px;
+    filter: drop-shadow(2px 2px 7px rgba(0, 0, 0, 0.1));
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__tape {
+    list-style: none;
+    margin: 70px 0 70px 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 300px;
+    gap: 35px;
+  }
+
+  &__tapeItem {
+    background-color: #fff;
   }
 
 }

@@ -2,57 +2,106 @@ import {useRouter} from "next/router";
 import s from "../../scss/modules/project.module.scss"
 import Image from "next/image"
 import work from "../../images/work.jpg"
-import workLogo from "../../images/workLogo.svg"
 import TopSection from "../../components/TopSection";
-import redux from "../../images/skills/redux.svg"
 import {mockupsAcro} from "../../utils/constants"
 import {Swiper, SwiperSlide} from "swiper/react";
 import {projects} from "../../utils/constants"
-import {useEffect, useState} from "react";
+import 'swiper/css';
+import { motion } from "framer-motion";
+import {useState} from "react";
 
 
 const Project = () => {
     const {query} = useRouter()
     const findWork = projects.find((item) => item.id === query.id)
-
+    const [activeIndex, setActiveIndex] = useState(0);
     const slides = mockupsAcro.map((item: any, index) => (
             <SwiperSlide key={index} className={s.project__swiperSlide}>
-                <Image src={item.mockup} />
+                <Image src={item.mockup} className={s.project__image} />
             </SwiperSlide>
         )
     )
 
+    const animationLeft = {
+        hidden: {
+            x: -100,
+            opacity: 0
+        },
+        visible: custom => ({
+            x: 0,
+            opacity: 1,
+            transition: {delay: custom * 0.1}
+        })
+    }
+
+    const animationRight = {
+        hidden: {
+            x: 100,
+            opacity: 0
+        },
+        visible: custom => ({
+            x: 0,
+            opacity: 1,
+            transition: {delay: custom * 0.1}
+        })
+    }
+
+    const sectionAnimation = {
+        hidden: {
+            y: 30,
+            opacity: 0
+        },
+        visible: custom  => ({
+            y: 0,
+            opacity: 1,
+            transition: {delay: custom * 0.1}
+        })
+    }
+
     return (
         <section className={s.project}>
-            <div className={s.project__wrapper}>
+            <motion.div
+                className={s.project__wrapper}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.5, once: true }}
+            >
                 <div className={s.project__workLogo}>
                     <Image src={findWork?.intro?.imageLogo} width={301}/>
                 </div>
                 <div className={s.project__bottomLine}>
-                    <ul className={s.project__stats}>
+                    <motion.ul
+                        className={s.project__stats}
+                        custom={2}
+                        variants={animationLeft}
+                    >
                         {
-                            findWork?.intro?.statusItems.map((item) => (
+                            findWork?.intro?.statusItems.map((item, i) => (
                                 <li className={s.project__statsItem} key={item.title}>
                                     <h4 className={s.project__statsTitle}>{item.title}</h4>
                                     <span className={s.project__statsValue}>{item.value}</span>
                                 </li>
                             ))
                         }
-                    </ul>
-                    <div className={s.project__lineButtons}>
+                    </motion.ul>
+                    <motion.div
+                        className={s.project__lineButtons}
+                        custom={2}
+                        variants={animationRight}
+                    >
                         <a href={findWork?.intro.linkDemo}>
                             <button className={s.project__lineButton_full}>Demo</button>
                         </a>
                         <a href={findWork?.intro.linkGitHub}>
                             <button className={s.project__lineButton}>GitHub</button>
                         </a>
-                    </div>
+                    </motion.div>
                 </div>
                 <div className={s.project__imageWrapper}>
                     <div className={s.project__background}/>
                     <Image className={s.project__imageWork} src={work}/>
                 </div>
-            </div>
+            </motion.div>
             <div className={s.project__content}>
                 <TopSection title="АркоМебель" subtitle="Онлайн магазин мебели"/>
                 <div className={s.project__aboutProject}>
@@ -82,12 +131,19 @@ const Project = () => {
                 </div>
                 <div className={s.project__swiperWrapper}>
                     <Swiper
-
-                        spaceBetween={20}
+                        loop
+                        spaceBetween={50}
+                        slidesPerView={1}
                     >
                         {slides}
                     </Swiper>
                 </div>
+                <ul className={s.project__tape}>
+                    <li className={s.project__tapeItem}></li>
+                    <li className={s.project__tapeItem}></li>
+                    <li className={s.project__tapeItem}></li>
+                    <li className={s.project__tapeItem}></li>
+                </ul>
             </div>
         </section>
     )

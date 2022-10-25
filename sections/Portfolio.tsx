@@ -5,16 +5,18 @@ import ButtonGroup from "../components/ButtonGroup";
 import Work from "../components/Work";
 import work1 from "../images/work.jpg"
 import Button from "../components/Button";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import skills from "../scss/modules/skills.module.scss";
 import { motion } from "framer-motion";
 
 const Portfolio: React.FC = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [filterWorks, setFilterWorks] = useState([]);
     const buttons  = [{title: "Все"}, {title: "Frontend"}, {title: "Fullstack"}]
     const works = [
-        {title: 'Онлайн-магазин мебели', tag: 'full stack', image: work1, linkId: "acro-furniture"},
-        {title: 'Доставка марсианской еды', tag: 'frontend', image: work1, linkId: "marsik"},
-        {title: 'Сервис загрузки фотографий', tag: 'full stack', image: work1, linkId: "mesto"}
+        {title: 'Онлайн-магазин мебели', tag: 'Frontend', image: work1, linkId: "acro-furniture"},
+        {title: 'Доставка марсианской еды', tag: 'Frontend', image: work1, linkId: "marsik"},
+        {title: 'Сервис загрузки фотографий', tag: 'Fullstack', image: work1, linkId: "mesto"}
     ]
 
     const sectionAnimation = {
@@ -28,6 +30,21 @@ const Portfolio: React.FC = () => {
             transition: {delay: custom * 0.1}
         })
     }
+
+    const onClickButton = (i) => {
+        setActiveIndex(i)
+    }
+
+    useEffect(() => {
+        const currentWorks = works.filter((item) => {
+            if (activeIndex === 0) {
+                return true
+            } else {
+                return item.tag === buttons[activeIndex].title
+            }
+        })
+        setFilterWorks(currentWorks)
+    }, [activeIndex])
 
 
     return (
@@ -43,20 +60,29 @@ const Portfolio: React.FC = () => {
                 <TopSection title="Портфолио" subtitle="реализованные проекты"/>
                 <div className={skills.skills__buttonGroup}>
                     {
-                        buttons.map((item) => (
-                            <button className="skills__button">{item.title}</button>
+                        buttons.map((item, i) => (
+                            <button
+                                key={i}
+                                onClick={() => onClickButton(i)}
+                                className={`skills__button ${activeIndex === i ? "skills__button_active" : ""} `}
+                            >
+                                {item.title}
+                            </button>
                         ))
                     }
 
                 </div>
                 <ul className={portfolio.portfolio__works}>
                     {
-                        works.map((item, i) => (
+                        filterWorks.map((item, i) => (
                             <Work key={i} item={item}/>
                         ))
                     }
                 </ul>
-                <Button width="100%">Еще</Button>
+                {
+                    filterWorks.length > 3 &&
+                    <Button width="100%">Еще</Button>
+                }
             </div>
         </motion.section>
     )
