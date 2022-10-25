@@ -37,13 +37,18 @@ const Contacts: React.FC = () => {
             .max(250, 'максимум 250 символов'),
     })
 
-    const {register, handleSubmit, formState: {errors}} = useForm({
+    type FormValues = {
+        email: string;
+        title: string;
+        message: string;
+    };
+
+
+    const {register, handleSubmit, formState: {errors}} = useForm<FormValues>({
         mode: 'onBlur',
-        resolver: yupResolver(schema)
+        resolver: yupResolver(schema),
     })
 
-    // @ts-ignore
-    // @ts-ignore
     return (
         <motion.section
             initial="hidden"
@@ -72,7 +77,9 @@ const Contacts: React.FC = () => {
                                 title="Почта"
                                 {...register("email", {required: true})}
                             />
-                            <span className={s.contacts__error}>{errors?.email?.message}</span>
+                            {
+                                <span className={s.contacts__error}>{errors?.email?.message}</span>
+                            }
                         </div>
                         <div className={s.contacts__inputWrapper}>
                             <span className={s.contacts__inputSpan}>Тема сообщения</span>
