@@ -6,9 +6,12 @@ import TopSection from "../../components/TopSection";
 import {mockupsAcro} from "../../utils/constants"
 import {Swiper, SwiperSlide} from "swiper/react";
 import {projects} from "../../utils/constants"
+import { Navigation, Pagination } from 'swiper';
 import 'swiper/css';
 import { motion } from "framer-motion";
 import {useState} from "react";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 
 const Project = () => {
@@ -131,9 +134,11 @@ const Project = () => {
                 </div>
                 <div className={s.project__swiperWrapper}>
                     <Swiper
-                        loop
+                        modules={[Navigation, Pagination]}
                         spaceBetween={50}
                         slidesPerView={1}
+                        navigation
+                        pagination={{ clickable: true }}
                     >
                         {slides}
                     </Swiper>

@@ -3,18 +3,25 @@ import logo from "../images/logoFooter.svg"
 import Image from "next/image";
 import React from "react";
 import {ARRAY_MENU, ARRAY_SOCIALS} from "../utils/constants";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
     return(
         <footer className={s.footer}>
             <div className={s.footer__wrapper}>
                 <div className={s.footer__top}>
-                    <Image src={logo} />
+                    <div className={s.footer__logoLink}>
+                        <Link href="/">
+                            <Image src={logo}/>
+                        </Link>
+                    </div>
                     <nav>
                         <ul className={s.footer__menu}>
                             {
                                 ARRAY_MENU.map((item, index) => (
-                                    <li key={index} className={s.footer__menu_link}>{item.name}</li>
+                                    <Link href={item.link}>
+                                        <li key={index} className={s.footer__menu_link}>{item.name}</li>
+                                    </Link>
                                 ))
                             }
                         </ul>
@@ -25,7 +32,11 @@ const Footer: React.FC = () => {
                     <ul className={s.footer__socials}>
                         {
                             ARRAY_SOCIALS.map((item, i) => (
-                                <li key={i} className={s.footer__social}><Image src={item.icon} width={20} height={20} /></li>
+                                <a href={item.link} target="_blank">
+                                    <li key={i} className={s.footer__social}>
+                                        <Image src={item.icon} width={20} height={20} />
+                                    </li>
+                                </a>
                             ))
                         }
                     </ul>

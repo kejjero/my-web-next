@@ -19,6 +19,17 @@
     }
   }
 
+  &__logoLink {
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
   &__top {
     display: flex;
     align-items: center;
@@ -84,6 +95,7 @@
   }
 
   &__social {
+    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -93,6 +105,15 @@
     justify-content: center;
     cursor: pointer;
     flex-wrap: wrap;
+    bottom: 0;
+    transition: bottom ease-in-out 0.1s, opacity ease-in-out 0.2s;
+    opacity: 0.7;
+
+    &:hover {
+      bottom: 2px;
+      transition: bottom ease-in-out 0.1s, opacity ease-in-out 0.2s;
+      opacity: 1;
+    }
   }
 
 }

@@ -2,6 +2,7 @@ import insta from "../images/socials/instagram.svg"
 import github from "../images/socials/github.svg"
 import vk from "../images/socials/vk.svg"
 import telegram from "../images/socials/telegram.svg"
+import linkedin from "../images/socials/linkedin.svg"
 import {
     html, css, scss, js, ts, react, router, redux, form, axios, mui, next,
     jest, webpack, nodejs, express, mongodb, nest, figma, illustrator,
@@ -13,17 +14,19 @@ import logoAcro from  "../images/workLogo.svg";
 
 
 export const ARRAY_MENU = [
-    {name: 'Обо мне'},
-    {name: 'Навыки'},
-    {name: 'Проекты'},
-    {name: 'Контакты'},
+    {name: 'Обо мне', link: "#about"},
+    {name: 'Навыки', link: "#skills"},
+    {name: 'Услуги', link: "#service"},
+    {name: 'Проекты', link: "#portfolio"},
+    {name: 'Контакты', link: "#contacts"},
 ]
 
 export const ARRAY_SOCIALS = [
-    {icon: insta},
-    {icon: github},
-    {icon: vk},
-    {icon: telegram},
+    {icon: insta, link: "https://www.instagram.com/kejero.o"},
+    {icon: github, link: "https://github.com/kejjero"},
+    {icon: vk, link: "https://vk.com/kejera"},
+    {icon: telegram, link: "https://t.me/kejRRR"},
+    {icon: linkedin, link: "https://www.linkedin.com/in/maxim-peters-560711254/"},
 ]
 
 export const SKILLS = [

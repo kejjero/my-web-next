@@ -8,8 +8,18 @@ import s from "../../scss/modules/menu.module.scss"
 
 export const Menu = () => {
     const [isOpen, toggleOpen] = useCycle(false, true);
+    const [activeBlock, setActiveBlock] = useState(false)
+    const [width, setWidth] = useState<number>()
     const containerRef = useRef(null);
     const {right} = useDimensions(containerRef);
+
+    const clipValue = () => {
+        if (width > 520) {
+            return 229
+        } else  {
+            return 270
+        }
+    }
 
     const sidebar = {
         open: (height = 1000) => ({
@@ -21,7 +31,7 @@ export const Menu = () => {
             }
         }),
         closed: {
-            clipPath: `circle(25px at ${229}px 40px)`,
+            clipPath: `circle(25px at ${clipValue()}px 40px)`,
             transition: {
                 delay: 0.5,
                 type: "spring",
@@ -31,6 +41,15 @@ export const Menu = () => {
         }
     };
 
+    useEffect(() => {
+        if (isOpen) {
+            setTimeout(() => setActiveBlock(true), 100)
+        } else {
+            setTimeout(() => setActiveBlock(false), 1500)
+        }
+        setWidth(window.screen.width)
+    },[isOpen])
+
     return (
         <div className={`menu ${isOpen && "menu_active"}`}>
             <div className={`blur ${isOpen && "blur_active"}`} onClick={() => toggleOpen()}></div>
@@ -39,11 +58,11 @@ export const Menu = () => {
                 animate={isOpen ? "open" : "closed"}
                 custom={right}
                 ref={containerRef}
-                className={s.nav}
+                className={`nav ${activeBlock && "nav_active"}`}
             >
                 <motion.div className={s.background} variants={sidebar}/>
                 <Navigation toggle={() => toggleOpen()} isOpen={isOpen}/>
-                <MenuToggle toggle={() => toggleOpen()}/>
+                <MenuToggle toggle={() => toggleOpen()} activeBlock={activeBlock}/>
             </motion.nav>
         </div>
     );

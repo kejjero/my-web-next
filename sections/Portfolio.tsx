@@ -15,9 +15,9 @@ const Portfolio: React.FC = () => {
     const [width, setWidth] = useState<number>();
     const buttons  = [{title: "Все"}, {title: "Frontend"}, {title: "Fullstack"}]
     const works = [
-        {title: 'Онлайн-магазин мебели', tag: 'Frontend', image: work1, linkId: "acro-furniture"},
-        {title: 'Доставка марсианской еды', tag: 'Frontend', image: work1, linkId: "marsik"},
-        {title: 'Сервис загрузки фотографий', tag: 'Fullstack', image: work1, linkId: "mesto"}
+        {title: 'Онлайн-магазин мебели', tag: 'Frontend', image: work1, linkId: "acro-furniture", link: "https://github.com/arco-furniture/arco-furniture"},
+        {title: 'Доставка марсианской еды', tag: 'Frontend', image: work1, linkId: "marsik", link: "https://github.com/kejjero/mars-food"},
+        {title: 'Сервис загрузки фотографий', tag: 'Fullstack', image: work1, linkId: "mesto", link: "https://github.com/kejjero/react-mesto-api-full"}
     ]
 
     const sectionAnimation = {

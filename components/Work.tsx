@@ -50,6 +50,8 @@ const Work: React.FC<IWork> = ({item}) => {
         })
     }
 
+    console.log(item)
+
 
     return (
         <motion.li
@@ -84,16 +86,22 @@ const Work: React.FC<IWork> = ({item}) => {
                     <Image src={item.image} className={`portfolio__image`} height={heightImage} width={widthImage}/>
                 </div>
             </div>
-            {
-                widthWindow >= 768 &&
                 <div className={s.portfolio__workWrapper}>
-                    <p className={s.portfolio__tag}>{item.tag}</p>
-                    <h3 className={s.portfolio__title}>{item.title}</h3>
-                    <Link href={`/projects/${item.linkId}`}>
-                        <button className={button.button} onClick={() => setOnClickWork(true)}>Подробнее</button>
+                    {
+                        widthWindow >= 768 &&
+                        <>
+                            <p className={s.portfolio__tag}>{item.tag}</p>
+                            <h3 className={s.portfolio__title}>{item.title}</h3>
+                        </>
+                    }
+                    {/*<Link href={`/projects/${item.linkId}`}>*/}
+                    {/*    <button className={button.button} onClick={() => setOnClickWork(true)}>Подробнее</button>*/}
+                    {/*</Link>*/}
+
+                    <Link href={item.link}>
+                        <button className={button.button}>Подробнее</button>
                     </Link>
                 </div>
-            }
         </motion.li>
     )
 }
