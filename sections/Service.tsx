@@ -1,27 +1,37 @@
-import section from "../scss/modules/section.module.scss";
 import service from "../scss/modules/service.module.scss"
 import TopSection from "../components/TopSection";
 import CardService from "../components/CardService";
 import React from "react";
 import { motion } from "framer-motion";
+import s from "../scss/modules/service.module.scss";
 
 const Service: React.FC = () => {
     const cards = [
         {
-            title: "Frontend",
-            text: "Создаю SPA или SSR приложения с полной адаптивностью под любые устройства. Имеется опыт разработки как одностраничных лендингов, так и полноценных онлайн магазинов."
+            title: <h4 className={s.service__cardTitle}>Frontend</h4>,
+            text: <p className={s.service__cardText}>
+                Создаю <a className={s.service__link} href="https://clck.ru/32TSR5" target="_blank">SPA</a> или <a className={s.service__link} href="https://clck.ru/32VmEu" target="_blank">SSR</a> приложения с полной адаптивностью под любые устройства.
+                Разрабатваю как одностраничные лендинги, так и полноценные онлайн магазины, сервисы, блоги.</p>
         },
         {
-            title: "Backend",
-            text: "Есть небольшой опыт разработки бекенда на уровне авторизации/регистрации пользователя, взаимодействия с БД (MongoDB) с помощью http запросов, отправка данных через сookie / jwt и т.д."
+            title: <h4 className={s.service__cardTitle}>Backend</h4>,
+            text: <p className={s.service__cardText}>Есть опыт разработки бекенда на уровне
+                авторизации/регистрации пользователя, взаимодействия с БД (MongoDB) с
+                помощью http запросов, отправка данных через сookie / jwt и т.д.</p>
         },
         {
-            title: "Fullstack",
-            text: "Готов взяться за fullstack проект под ключ, честно оценив свои силы и возможности. Так же владею навыками сборки, настройки и развёртывания приложений на Ubuntu."
+            title: <h4 className={s.service__cardTitle}>Fullstack</h4>,
+            text: <p className={s.service__cardText}>Готов взяться за fullstack проект под ключ с отрисовкой
+                дизайна, создания сервера и веб-интерфейсов. Так же владею навыками сборки, настройки и развёртывания приложений
+                на <a className={s.service__link} href="https://ubuntu.com" target="_blank">Ubuntu</a>.</p>
         },
         {
-            title: "Graphics",
-            text: "Разрабатываю креативный дизайн сайтов, дополняя их красочными иллюстрациями, анимациями и иными приблудами. Берусь только за то, что сделаю по настоящему качественно."
+            title: <h4 className={s.service__cardTitle}>Graphics</h4>,
+            text: <p className={s.service__cardText}>Искусно работаю с
+                растровой и векторной графикой и немного с 3D.
+                Разрабатываю креативный дизайн сайтов, дополняя их
+                красочными иллюстрациями и анимациями.
+            </p>
         },
     ]
 

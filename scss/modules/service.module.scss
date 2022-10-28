@@ -89,4 +89,13 @@
     line-height: 32px;
     color: #d2c4c4;
   }
+
+  &__link {
+    color: #4B98F2;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

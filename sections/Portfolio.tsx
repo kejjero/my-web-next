@@ -53,7 +53,7 @@ const Portfolio: React.FC = () => {
         <motion.section
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: width > 700 ? 0.4 : 0.1, once: true}}
+            viewport={{ amount: width > 700 ? 0.2 : 0.1, once: true}}
             className={section.section}
             custom={1}
             variants={sectionAnimation}

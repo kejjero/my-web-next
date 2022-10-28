@@ -13,8 +13,8 @@ export interface  IButton {
 }
 
 export interface  ICardService {
-    title: string
-    text: string
+    title: JSX.Element
+    text: JSX.Element
 }
 
 export interface  ILabel {

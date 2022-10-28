@@ -92,6 +92,15 @@
     line-height: 32px;
   }
 
+  &__link {
+    color: #4B98F2;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &__info {
     margin: 35px 0 0;
     padding: 0;
@@ -186,10 +195,11 @@
     text-decoration: none;
     color: #161513;
     opacity: 0.8;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, color ease-in-out 0.1s;
 
     &:hover {
       opacity: 1;
+      color: #4B98F2;
     }
   }
 

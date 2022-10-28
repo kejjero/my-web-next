@@ -7,6 +7,7 @@ import Marquee from "react-fast-marquee";
 import React, {useEffect, useState} from "react";
 import {useTrail, a} from "react-spring";
 import {motion} from "framer-motion"
+import Link from "next/link";
 
 
 const Intro: React.FC = () => {
@@ -54,8 +55,12 @@ const Intro: React.FC = () => {
                         2D/3D Graphics
                     </motion.p>
                     <motion.div custom={7} variants={textAnimation} className={s.intro__buttons}>
-                        <Button fill={true}>Сотрудничество</Button>
-                        <Button>Подробнее</Button>
+                        <a href="#contacts">
+                            <Button fill={true}>Сотрудничество</Button>
+                        </a>
+                        <a href="#about">
+                            <Button>Подробнее</Button>
+                        </a>
                     </motion.div>
                 </div>
                 <Image className={s.intro__avatar} src={ava} width={550} height={550}/>

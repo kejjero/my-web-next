@@ -6,9 +6,9 @@ import {motion} from "framer-motion";
 const About: React.FC = () => {
     const labelStyles = {paddingTop: 4}
     const info = [
-        {title: "Резюме", value: "@resume", link: "https://career.habr.com/kejero"},
+        {title: "Резюме", value: "@resume", link: "https://hh.ru/resume/b071ac9cff09e030b20039ed1f657659444e61"},
         {title: "CG Арты", value: "@kejero.arts", link: "https://www.instagram.com/kejero.arts"},
-        {title: "youtube", value: "@kejero.it", link: "https://career.habr.com/kejero"}
+        {title: "youtube", value: "@kejero.it", link: ""}
     ]
     const stats = [
         {title: "год опыта разработки", value: "1+"},
@@ -73,12 +73,14 @@ const About: React.FC = () => {
                             Создаю креативные веб-интерфейсы с уклоном на производительность и оптимизацию приложений.
                         </motion.h3>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                            Чаще всего я работаю с уклоном на frontend в стеках React / Vue и с сопутствующими
-                            к ним библиотеками. Со всей страстью подхожу к изучению неизвестных мне технологий,
+                            Чаще всего я работаю с уклоном на frontend
+                            в стеках <a className={s.about__link} href="https://ru.reactjs.org/" target="_blank">React</a> / <a className={s.about__link} href="https://ru.vuejs.org/" target="_blank">Vue</a> и
+                            с сопутствующими
+                            к ним библиотеками. Со всей страстью подхожу к изучению новых мне технологий,
                             а также всегда стараюсь поддерживать качество и читабельность кода.
                         </motion.p>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                            Помимо разработки, я занимаюсь созданием UX/UI дизайна, рисую красочные иллюстрации
+                            Помимо разработки, я занимаюсь созданием UI дизайна, рисую красочные иллюстрации
                             и понемногу практикуюсь в анимациях. А в качестве хобби иду в направлении цифровой
                             графики, искусства и блогерства.
                         </motion.p>
