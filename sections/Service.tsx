@@ -22,13 +22,13 @@ const Service: React.FC = () => {
         {
             title: <h4 className={s.service__cardTitle}>Fullstack</h4>,
             text: <p className={s.service__cardText}>Готов взяться за fullstack проект под ключ с отрисовкой
-                дизайна, создания сервера и веб-интерфейсов. Так же владею навыками сборки, настройки и развёртывания приложений
-                на <a className={s.service__link} href="https://ubuntu.com" target="_blank">Ubuntu</a>.</p>
+                дизайна, создания сервера и веб-интерфейса. Так же владею навыками сборки, настройки и развёртывания приложений
+                на <a className={s.service__link} href="https://thecode.media/ubuntu-linux/" target="_blank">Ubuntu</a>.</p>
         },
         {
             title: <h4 className={s.service__cardTitle}>Graphics</h4>,
             text: <p className={s.service__cardText}>Искусно работаю с
-                растровой и векторной графикой и немного с 3D.
+                растровой / векторной графикой и немного с 3D.
                 Разрабатываю креативный дизайн сайтов, дополняя их
                 красочными иллюстрациями и анимациями.
             </p>

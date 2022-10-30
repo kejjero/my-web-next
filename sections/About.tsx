@@ -70,7 +70,7 @@ const About: React.FC = () => {
                     </div>
                     <div className={s.about__wrapper_about}>
                         <motion.h3 custom={3} variants={topRightAnimation} className={s.about__titleAbout}>
-                            Создаю креативные веб-интерфейсы с уклоном на производительность и оптимизацию приложений.
+                            Создаю креативные веб-интерфейсы с уклоном на производительность и оптимизацию.
                         </motion.h3>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
                             Чаще всего я работаю с уклоном на frontend

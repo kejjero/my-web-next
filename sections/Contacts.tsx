@@ -105,8 +105,10 @@ const Contacts: React.FC = () => {
                     </div>
                     <button
                         type="submit"
-                        className={ errors.message ? contacts.contacts__submit_disabled : contacts.contacts__submit}
-                        disabled={!!errors.message}
+                        className={contacts.contacts__submit_disabled}
+                        // className={ errors.message ? contacts.contacts__submit_disabled : contacts.contacts__submit}
+                        // disabled={!!errors.message}
+                        disabled
                     >
                         Отправить сообщение
                     </button>
