@@ -1,8 +1,9 @@
 import section from "../scss/modules/section.module.scss";
 import portfolio from "../scss/modules/portfolio.module.scss"
 import TopSection from "../components/TopSection";
-import ButtonGroup from "../components/ButtonGroup";
 import Work from "../components/Work";
+import work3 from "../images/work3.jpg"
+import work2 from "../images/work2.png"
 import work1 from "../images/work.jpg"
 import Button from "../components/Button";
 import React, {useEffect, useState} from "react";
@@ -16,8 +17,8 @@ const Portfolio: React.FC = () => {
     const buttons  = [{title: "Все"}, {title: "Frontend"}, {title: "Fullstack"}]
     const works = [
         {title: 'Онлайн-магазин мебели', tag: 'Frontend', image: work1, linkId: "acro-furniture", link: "https://github.com/arco-furniture/arco-furniture"},
-        {title: 'Доставка марсианской еды', tag: 'Frontend', image: work1, linkId: "marsik", link: "https://github.com/kejjero/mars-food"},
-        {title: 'Сервис загрузки фотографий', tag: 'Fullstack', image: work1, linkId: "mesto", link: "https://github.com/kejjero/react-mesto-api-full"}
+        {title: 'Доставка марсианской еды', tag: 'Frontend', image: work2, linkId: "marsik", link: "https://github.com/kejjero/mars-food"},
+        {title: 'Сервис загрузки фотографий', tag: 'Fullstack', image: work3, linkId: "mesto", link: "https://github.com/kejjero/react-mesto-api-full"}
     ]
 
     const sectionAnimation = {

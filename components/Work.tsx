@@ -50,9 +50,6 @@ const Work: React.FC<IWork> = ({item}) => {
         })
     }
 
-    console.log(item)
-
-
     return (
         <motion.li
             className={s.portfolio__work}
@@ -99,7 +96,7 @@ const Work: React.FC<IWork> = ({item}) => {
                     {/*</Link>*/}
 
                     <Link href={item.link}>
-                        <button className={button.button}>Подробнее</button>
+                        <button className={s.portfolio__button}>Подробнее</button>
                     </Link>
                 </div>
         </motion.li>

@@ -67,6 +67,8 @@ a {
   line-height: 24px;
   letter-spacing: 0.5px;
   min-width: 120px;
+  transition: opacity ease-in-out 0.2s;
+  opacity: 1;
 
 
   &:nth-child(1) {
@@ -80,6 +82,10 @@ a {
   &_active {
     background-color: #000;
     color: #F2F1EF;
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 }
 
