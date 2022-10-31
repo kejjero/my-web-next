@@ -29,6 +29,10 @@
     &_about {
       display: flex;
       flex-direction: column;
+
+      @media screen and (max-width: 920px) {
+        gap: 10px;
+      }
     }
   }
 

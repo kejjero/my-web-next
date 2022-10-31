@@ -12,7 +12,7 @@ const About: React.FC = () => {
     ]
     const stats = [
         {title: "год опыта разработки", value: "1+"},
-        {title: "реализованных проектов", value: "8"},
+        {title: "реализованных проектов", value: "7"},
         {title: "hard skills", value: "20+"}
     ]
 
@@ -73,10 +73,10 @@ const About: React.FC = () => {
                             Создаю креативные веб-интерфейсы с уклоном на производительность и оптимизацию.
                         </motion.h3>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                            Чаще всего я работаю с уклоном на frontend
+                            Чаще всего я работаю c фронтендом
                             в стеках <a className={s.about__link} href="https://ru.reactjs.org/" target="_blank">React</a> / <a className={s.about__link} href="https://ru.vuejs.org/" target="_blank">Vue</a> и
                             с сопутствующими
-                            к ним библиотеками. Со всей страстью подхожу к изучению новых мне технологий,
+                            к ним библиотеками. Со всей страстью подхожу к изучению новых технологий,
                             а также всегда стараюсь поддерживать качество и читабельность кода.
                         </motion.p>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
