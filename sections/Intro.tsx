@@ -2,12 +2,13 @@ import s from "../scss/modules/intro.module.scss";
 import Image from "next/image";
 import ava from "../images/ava.jpg"
 import Label from "../components/Label";
-import Button from "../components/Button";
 import Marquee from "react-fast-marquee";
 import React, {useEffect, useState} from "react";
 import {useTrail, a} from "react-spring";
 import {motion} from "framer-motion"
-import Link from "next/link";
+import {RightOutlined} from "@ant-design/icons";
+import { Button } from 'antd';
+import 'antd/dist/antd.css';
 
 
 const Intro: React.FC = () => {
@@ -35,6 +36,7 @@ const Intro: React.FC = () => {
         })
     }
 
+
     return (
         <motion.section
             className={s.intro}
@@ -55,12 +57,34 @@ const Intro: React.FC = () => {
                         2D/3D Graphics
                     </motion.p>
                     <motion.div custom={7} variants={textAnimation} className={s.intro__buttons}>
-                        <a href="#contacts">
-                            <Button fill={true}>Сотрудничество</Button>
-                        </a>
-                        <a href="#about">
-                            <Button>Подробнее</Button>
-                        </a>
+                        <Button
+                            size="large"
+                            type="primary"
+                            style={{
+                                minHeight: "45px",
+                                minWidth: "150px",
+                                backgroundColor: "#000",
+                                color: "#fff",
+                                borderColor: "#000",
+                                borderRadius: "0"
+                        }}
+                        >
+                            Подробнее
+                        </Button>
+
+                        <Button
+                            size="large"
+                            style={{
+                                minHeight: "45px",
+                                minWidth: "120px",
+                                backgroundColor: "#F2F1EF",
+                                borderRadius: "0",
+                                borderColor: "#000",
+                                color: "#000"
+                        }}
+                        >
+                            Подробнее
+                        </Button>
                     </motion.div>
                 </div>
                 <Image className={s.intro__avatar} src={ava} width={550} height={550}/>
@@ -92,25 +116,3 @@ const Intro: React.FC = () => {
 }
 
 export default Intro;
-
-const Trail: React.FC<any> = ({ open, children }) => {
-    const items = React.Children.toArray(children)
-
-
-    const trail = useTrail(items.length, {
-        config: { mass: 5, tension: 2000, friction: 200 },
-        opacity: open ? 1 : 0,
-        x: open ? 0 : 20,
-        height: open ? 'auto' : 0,
-        from: { opacity: 0, x: 20, height: 0 },
-    })
-    return (
-        <div>
-            {trail.map(({ height, ...style }, index) => (
-                <a.div key={index} className={s.intro__trailsText} style={style}>
-                    <a.div style={{ height }}>{items[index]}</a.div>
-                </a.div>
-            ))}
-        </div>
-    )
-}

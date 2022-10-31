@@ -19,8 +19,8 @@ const Footer: React.FC = () => {
                         <ul className={s.footer__menu}>
                             {
                                 ARRAY_MENU.map((item, index) => (
-                                    <Link href={item.link}>
-                                        <li key={index} className={s.footer__menu_link}>{item.name}</li>
+                                    <Link key={index} href={item.link}>
+                                        <li className={s.footer__menu_link}>{item.name}</li>
                                     </Link>
                                 ))
                             }
@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
                     <ul className={s.footer__socials}>
                         {
                             ARRAY_SOCIALS.map((item, i) => (
-                                <a href={item.link} target="_blank">
-                                    <li key={i} className={s.footer__social}>
+                                <a key={i} href={item.link} target="_blank">
+                                    <li className={s.footer__social}>
                                         <Image src={item.icon} width={20} height={20} />
                                     </li>
                                 </a>

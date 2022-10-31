@@ -5,7 +5,11 @@ import React, {useEffect, useState} from "react";
 import {IWork} from "../types/components";
 import Link from "next/link";
 import workLogo from "../images/workLogo.svg"
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
+import 'antd/dist/antd.css';
+import {Button} from 'antd';
+import {RightOutlined} from "@ant-design/icons";
+import {Divider, Tag} from 'antd';
 
 const Work: React.FC<IWork> = ({item}) => {
     const [widthImage, setWidthImage] = useState<number>();
@@ -16,9 +20,9 @@ const Work: React.FC<IWork> = ({item}) => {
 
     useEffect(() => {
         setWidthWindow(window.screen.width)
-        if (window.screen.width >= 920) {
-            setWidthImage(460)
-            setHeightImage(310)
+        if (window.screen.width > 920) {
+            setWidthImage(490)
+            setHeightImage(345)
         } else {
             setWidthImage(920)
             setHeightImage(500)
@@ -43,7 +47,7 @@ const Work: React.FC<IWork> = ({item}) => {
             y: 30,
             opacity: 0
         },
-        visible: custom  => ({
+        visible: custom => ({
             y: 0,
             opacity: 1,
             transition: {delay: custom * 0.1}
@@ -55,50 +59,48 @@ const Work: React.FC<IWork> = ({item}) => {
             className={s.portfolio__work}
             animate="visible"
             whileInView="visible"
-            viewport={{ amount: 0.7}}
+            viewport={{amount: 0.7}}
             custom={5}
             variants={sectionAnimation}
         >
             <div className={s.portfolio__imageWrapper}>
                 {
-                    widthWindow < 768 &&
-                    <div className={s.portfolio__workWrapper}>
+                    widthWindow < 920 &&
+                    <>
                         <h3 className={s.portfolio__title}>{item.title}</h3>
-                    </div>
+                        <p className={s.portfolio__paragraph}>{item.about}</p>
+                    </>
                 }
-                <div
-                    // onMouseEnter={() => setHoverImage(true)}
-                    // onMouseLeave={() => setHoverImage(false)}
-                    className={`portfolio__imageDiv ${hoverImage && "portfolio__imageDiv_active"}`}
-                >
-                    <div className={`portfolio__content ${hoverImage && "portfolio__content_active"}`}>
-                        <div className={s.portfolio__workHeader}>
-                            <Image src={workLogo} width={154} />
-                            <div className={s.portfolio__workButtons}>
-                                <button className={s.portfolio__workButton}>Demo</button>
-                                <button className={s.portfolio__workButton}></button>
-                            </div>
-                        </div>
-                    </div>
-                    <Image src={item.image} className={`portfolio__image`} height={heightImage} width={widthImage}/>
-                </div>
+                <Image
+                    src={item.image}
+                    className={`portfolio__image`}
+                    height={heightImage}
+                    width={widthImage}
+                />
             </div>
-                <div className={s.portfolio__workWrapper}>
+            <div className={s.portfolio__workWrapper}>
+                {
+                    widthWindow > 920 &&
+                    <>
+                        <h3 className={s.portfolio__title}>{item.title}</h3>
+                        <p className={s.portfolio__paragraph}>{item.about}</p>
+                    </>
+                }
+                <ul className={s.portfolio__skills}>
                     {
-                        widthWindow >= 768 &&
-                        <>
-                            <p className={s.portfolio__tag}>{item.tag}</p>
-                            <h3 className={s.portfolio__title}>{item.title}</h3>
-                        </>
+                        item.stack.map((item) => (
+                            <li key={item.skill}>
+                                <Tag color="default">{item.skill}</Tag>
+                            </li>
+                        ))
                     }
-                    {/*<Link href={`/projects/${item.linkId}`}>*/}
-                    {/*    <button className={button.button} onClick={() => setOnClickWork(true)}>Подробнее</button>*/}
-                    {/*</Link>*/}
-
-                    <Link href={item.link}>
-                        <button className={s.portfolio__button}>Подробнее</button>
-                    </Link>
-                </div>
+                </ul>
+                <Link href={item.link}>
+                    <Button className={s.portfolio__workButton} type="primary" size="large">
+                        Подробнее
+                    </Button>
+                </Link>
+            </div>
         </motion.li>
     )
 }

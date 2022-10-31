@@ -111,6 +111,10 @@
     }
   }
 
+  &__buttons {
+    display: flex;
+  }
+
   &__directions {
     margin: 50px 0  40px;
     display: flex;

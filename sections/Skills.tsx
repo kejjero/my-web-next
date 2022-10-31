@@ -6,6 +6,8 @@ import {SKILLS} from "../utils/constants";
 import MySkills from "../components/MySkills";
 import { motion } from "framer-motion";
 import SwiperSkills from "../components/SwiperSkills";
+import { Radio } from 'antd';
+import 'antd/dist/antd.css';
 
 const Skills: React.FC = () => {
     const buttons  = [{title: "Frontend"}, {title: "Backend"}, {title: "Графика"}]
@@ -50,17 +52,20 @@ const Skills: React.FC = () => {
                 <div className={section.section__wrapper}>
                     <TopSection title="Навыки и инструменты" subtitle="Что применяю в работе"/>
                     <div className={skills.skills__buttonGroup}>
-                        {
-                            buttons.map((item, i) => (
-                                <button
-                                    key={item.title}
-                                    onClick={() => onClickButton(i)}
-                                    className={`skills__button ${activeIndex === i ? "skills__button_active" : ""} `}
-                                >
-                                    {item.title}
-                                </button>
-                            ))
-                        }
+                        <Radio.Group size="large" defaultValue="Frontend">
+                            {
+                                buttons.map((item, i) => (
+                                    <Radio.Button
+                                        style={{backgroundColor: "#F2F1EF"}}
+                                        key={item.title}
+                                        value={item.title}
+                                        onClick={() => onClickButton(i)}
+                                    >
+                                        {item.title}
+                                    </Radio.Button>
+                                ))
+                            }
+                        </Radio.Group>
                     </div>
                     {
                         width > 520 ?

@@ -8,9 +8,14 @@ import {useForm} from "react-hook-form";
 import s from "../scss/modules/contacts.module.scss";
 import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
+import 'antd/dist/antd.css';
+import { Input } from 'antd';
+import { Button } from 'antd';
+import InputForm from "../components/InputForm";
 
 const Contacts: React.FC = () => {
     const onSubmit = data => console.log(data);
+    const { TextArea } = Input;
     const sectionAnimation = {
         hidden: {
             y: 30,
@@ -70,7 +75,8 @@ const Contacts: React.FC = () => {
                     <label className={contacts.contacts__label}>
                         <div className={s.contacts__inputWrapper}>
                             <span className={s.contacts__inputSpan}>Почта</span>
-                            <input
+                            <InputForm
+                                size="large"
                                 className={s.contacts__input}
                                 type="email"
                                 placeholder="name@mail.ru"
@@ -83,7 +89,8 @@ const Contacts: React.FC = () => {
                         </div>
                         <div className={s.contacts__inputWrapper}>
                             <span className={s.contacts__inputSpan}>Тема сообщения</span>
-                            <input
+                            <InputForm
+                                size="large"
                                 className={s.contacts__input}
                                 type="text"
                                 placeholder="Сотрудничество"
@@ -95,7 +102,8 @@ const Contacts: React.FC = () => {
                     </label>
                     <div className={s.contacts__inputWrapper}>
                         <span className={s.contacts__inputSpan}>Сообщение</span>
-                        <textarea
+                        <TextArea
+                            size="large"
                             rows={7}
                             className={s.contacts__input}
                             placeholder="Текст сообщения"
@@ -103,15 +111,14 @@ const Contacts: React.FC = () => {
                         />
                         <span className={s.contacts__error}>{errors?.message?.message}</span>
                     </div>
-                    <button
-                        type="submit"
-                        className={contacts.contacts__submit_disabled}
-                        // className={ errors.message ? contacts.contacts__submit_disabled : contacts.contacts__submit}
-                        // disabled={!!errors.message}
-                        disabled
+                    <Button
+                        type="primary"
+                        style={{width: "100%"}}
+                        size="large"
+                        disabled={!!errors.message}
                     >
                         Отправить сообщение
-                    </button>
+                    </Button>
                 </form>
             </motion.div>
         </motion.section>

@@ -2,24 +2,17 @@ import section from "../scss/modules/section.module.scss";
 import portfolio from "../scss/modules/portfolio.module.scss"
 import TopSection from "../components/TopSection";
 import Work from "../components/Work";
-import work3 from "../images/work3.jpg"
-import work2 from "../images/work2.png"
-import work1 from "../images/work.jpg"
-import Button from "../components/Button";
+import {works} from "../utils/constants"
 import React, {useEffect, useState} from "react";
 import skills from "../scss/modules/skills.module.scss";
 import { motion } from "framer-motion";
+import {Radio} from "antd";
 
 const Portfolio: React.FC = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [filterWorks, setFilterWorks] = useState([]);
     const [width, setWidth] = useState<number>();
     const buttons  = [{title: "Все"}, {title: "Frontend"}, {title: "Fullstack"}]
-    const works = [
-        {title: 'Онлайн-магазин мебели', tag: 'Frontend', image: work1, linkId: "acro-furniture", link: "https://github.com/arco-furniture/arco-furniture"},
-        {title: 'Доставка марсианской еды', tag: 'Frontend', image: work2, linkId: "marsik", link: "https://github.com/kejjero/mars-food"},
-        {title: 'Сервис загрузки фотографий', tag: 'Fullstack', image: work3, linkId: "mesto", link: "https://github.com/kejjero/react-mesto-api-full"}
-    ]
 
     const sectionAnimation = {
         hidden: {
@@ -62,18 +55,20 @@ const Portfolio: React.FC = () => {
             <div className={section.section__wrapper} id="portfolio">
                 <TopSection title="Портфолио" subtitle="реализованные проекты"/>
                 <div className={skills.skills__buttonGroup}>
-                    {
-                        buttons.map((item, i) => (
-                            <button
-                                key={i}
-                                onClick={() => onClickButton(i)}
-                                className={`skills__button ${activeIndex === i ? "skills__button_active" : ""} `}
-                            >
-                                {item.title}
-                            </button>
-                        ))
-                    }
-
+                    <Radio.Group size="large" defaultValue="Все">
+                        {
+                            buttons.map((item, i) => (
+                                <Radio.Button
+                                    key={item.title}
+                                    value={item.title}
+                                    onClick={() => onClickButton(i)}
+                                    style={{minWidth: "100px", textAlign: "center", backgroundColor: "#F2F1EF"}}
+                                >
+                                    {item.title}
+                                </Radio.Button>
+                            ))
+                        }
+                    </Radio.Group>
                 </div>
                 <ul className={portfolio.portfolio__works}>
                     {
@@ -82,10 +77,10 @@ const Portfolio: React.FC = () => {
                         ))
                     }
                 </ul>
-                {
-                    filterWorks.length > 3 &&
-                    <Button width="100%">Еще</Button>
-                }
+                {/*{*/}
+                {/*    filterWorks.length > 3 &&*/}
+                {/*    <Button width="100%">Еще</Button>*/}
+                {/*}*/}
             </div>
         </motion.section>
     )

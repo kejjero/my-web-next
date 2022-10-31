@@ -11,6 +11,9 @@ import {
 
 import {mockup_1, mockup_2, mockup_3, mockup_4, mockup_5} from "../images/acro"
 import logoAcro from  "../images/workLogo.svg";
+import work1 from "../images/work.jpg";
+import work2 from "../images/work2.png";
+import work3 from "../images/work3.jpg";
 
 
 export const ARRAY_MENU = [
@@ -87,5 +90,34 @@ export const projects = [
             linkDemo: "https://arco-furniture.github.io/arco-furniture/",
             imageLogo: logoAcro,
         },
+    }
+]
+
+export const works = [
+    {
+        title: 'АкроМебель', about: 'Онлайн-магазин мебели', tag: 'Frontend', image: work1, linkId: "acro-furniture", link: "https://github.com/arco-furniture/arco-furniture",
+        stack: [
+            {skill: "TypeScript"}, {skill: "React"}, {skill: "Redux Toolkit"},
+            {skill: "Jest + Enzyme"}, {skill: "Material UI"}, {skill: "React Hook Form"},
+            {skill: "SCSS"}, {skill: "Lodash"}, {skill: "React Loadable"},
+            {skill: "Axios"}, {skill: "Swiper"}
+        ]
+    },
+    {
+        title: 'Марсик', about: 'Доставка марсианской еды',tag: 'Frontend', image: work2, linkId: "marsik", link: "https://github.com/kejjero/mars-food",
+        stack: [
+            {skill: "TypeScript"}, {skill: "React"}, {skill: "Redux Toolkit"},
+            {skill: "SCSS"}, {skill: "Material UI"}, {skill: "Swiper"},
+            {skill: "Lodash"}, {skill: "React Router"}, {skill: "React Skeleton"},
+            {skill: "Axios"}, {skill: "LottieFiles animations"},
+        ]
+    },
+    {
+        title: 'Mesto', about: 'Сервис загрузки фотографий из путешествий',tag: 'Fullstack', image: work3, linkId: "mesto", link: "https://github.com/kejjero/react-mesto-api-full",
+        stack: [
+            {skill: "HTML"}, {skill: "CSS"}, {skill: "React"}, {skill: "Webpack"},
+            {skill: "React Router"}, {skill: "Node.js"}, {skill: "MongoDB"},
+            {skill: "Express.js"},
+        ]
     }
 ]
