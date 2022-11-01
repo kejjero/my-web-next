@@ -17,7 +17,17 @@ const Index = () => {
                 <meta name="author" content="Петерс Максим"/>
                 <meta name="description" content="Создаю креативные веб-интерфейсы с уклоном
                 на производительность и оптимизацию"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="shortcut icon" href="https://i.ibb.co/rmK589z/2.png" type="image/x-icon"/>
+                <meta name="copyright" lang="ru" content="kejero.pw" />
+                <meta name="keywords"
+                      content="веб-разработка,
+                      frontend, фронтенд, web-интерфейсы, веб-разработчик,
+                      разработчик, spa разработка, ssr разработка,
+                      web, fullstack разработка, сайт под ключ,
+                      фрилансер, фриланс, сайт-портфолио,
+                      создать сайт, React, TypeScript,"
+                />
             </Head>
             <Intro/>
             <About/>
