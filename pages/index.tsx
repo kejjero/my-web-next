@@ -20,6 +20,7 @@ const Index = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="shortcut icon" href="https://i.ibb.co/rmK589z/2.png" type="image/x-icon"/>
                 <meta name="copyright" lang="ru" content="kejero.pw" />
+                <meta name="yandex-verification" content="b7bdf3ba5acb6831" />
                 <meta name="keywords"
                       content="веб-разработка,
                       frontend, фронтенд, web-интерфейсы, веб-разработчик,
