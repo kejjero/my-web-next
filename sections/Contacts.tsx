@@ -126,7 +126,7 @@ const Contacts: React.FC = () => {
       <form className={contacts.captcha}>
         <ReCAPTCHA
           ref={recaptchaRef}
-          sitekey={config.CAPTCHA_KEY}
+          sitekey='6LeRuWokAAAAABb0UkVPdwRaZ_Pa7jx5b_ruPjTS'
           onChange={onChangeWithReCAPTCHA}
         />
         <div className={contacts.captcha__buttons}>
