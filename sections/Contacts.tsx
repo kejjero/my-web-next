@@ -21,7 +21,6 @@ const Contacts: React.FC = () => {
   const antForm = useRef(null)
   const [timeLeft, setTimeLeft] = useState(0)
   const [pushDate, setPushDate] = useState(null)
-  const recaptchaRef = React.useRef<HTMLFormElement | null>(null)
 
   useEffect(() => {
     let date
@@ -113,6 +112,7 @@ const Contacts: React.FC = () => {
   }
 
   const FormCaptcha = memo(() => {
+    const recaptchaRef = React.useRef<HTMLFormElement | null>(null)
     const [activeAcceptButton, setActiveAcceptButton] = useState<boolean>(false)
 
 
