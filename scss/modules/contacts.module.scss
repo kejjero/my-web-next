@@ -106,8 +106,11 @@
   position: absolute;
   bottom: 25px;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  height: 40px;
+}
+
+.formCaptcha {
+  min-height: 100px;
+  min-width: 320px;
 }
 
 .captcha {
@@ -116,6 +119,16 @@
   gap: 10px;
   min-height: 100px;
   min-width: 320px;
+  animation: formAnimate ease-in-out 0.2s;
+
+  @keyframes formAnimate {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   &__buttons {
     display: flex;

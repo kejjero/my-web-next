@@ -21,17 +21,19 @@ const Contacts: React.FC = () => {
   const antForm = useRef(null)
   const [timeLeft, setTimeLeft] = useState(0)
   const [pushDate, setPushDate] = useState(null)
+  const recaptchaRef = React.useRef<HTMLFormElement | null>(null)
 
   useEffect(() => {
     let date
     if (pushDate) {
       date = pushDate
     } else {
-      date = Number(JSON.parse(localStorage.getItem('dt')))
+      date = JSON.parse(localStorage.getItem('dt'))
     }
     if (date) {
-      const moveSeconds = Math.round((date + 600000  - new Date().getTime()) / 1000)
-      moveSeconds >= 600 ? setTimeLeft(0) : setTimeLeft(moveSeconds)
+      const moveSeconds = Math.round((Number(date) + 600000  - new Date().getTime()) / 1000)
+      console.log(moveSeconds)
+      moveSeconds > 600 ? setTimeLeft(0) : setTimeLeft(moveSeconds)
     }
   },[pushDate])
 
@@ -44,7 +46,7 @@ const Contacts: React.FC = () => {
       setTimeLeft((timeLeft) => timeLeft >= 1 ? timeLeft - 1 : 0)
     },1000)
     return () => clearInterval(interval)
-  },[])
+  },[timeLeft])
 
 
   const getPadTime = (time) => time.toString().padStart(2, 0)
@@ -77,7 +79,6 @@ const Contacts: React.FC = () => {
       type: 'loading',
       content: 'Загрузка...',
     })
-
     emailjs.sendForm(
       config.SERVICE_KEY,
       config.TEMPLATE_KEY,
@@ -91,10 +92,13 @@ const Contacts: React.FC = () => {
           content: 'Сообщение отправлено!',
           duration: 2,
         })
+      })
+      .then(() => {
         localStorage.setItem('dt', JSON.stringify(new Date().getTime()))
         setPushDate(Number(JSON.parse(localStorage.getItem('dt'))))
         resetForm()
-      }, () => {
+      })
+      .catch(() => {
         message.open({
           key,
           type: 'error',
@@ -109,7 +113,6 @@ const Contacts: React.FC = () => {
   }
 
   const FormCaptcha = memo(() => {
-    const recaptchaRef = React.useRef<HTMLFormElement | null>(null)
     const [activeAcceptButton, setActiveAcceptButton] = useState<boolean>(false)
 
 
@@ -212,7 +215,7 @@ const Contacts: React.FC = () => {
                             />
                         </Form.Item>
                     </div>
-              <Popover content={<FormCaptcha />} title="Подтвердите, что вы не робот" open={open}>
+              <Popover className={s.formCaptcha} content={<FormCaptcha />} title="Подтвердите, что вы не робот" open={open}>
                     <Form.Item style={{width: '100%'}}>
                             <Button
                               type="primary"
