@@ -2,7 +2,7 @@
   "name": "my-web-next",
   "version": "1.0.0",
   "description": "",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build:server": "tsc --project tsconfig.server.json",
