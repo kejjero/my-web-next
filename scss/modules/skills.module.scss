@@ -20,13 +20,10 @@
   &__skillsGroup {
     margin: 45px 0 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(160px, 1fr));
     column-gap: 15px;
     row-gap: 15px;
     list-style-type: none;
-    min-height: 240px;
+    min-height: 370px;
 
     &__skill {
       display: flex;
@@ -53,8 +50,12 @@
     text-align: center;
   }
 
-  &__swiper {
-    margin-top: 60px;
+  &__swiperDesk {
+    min-height: 332px;
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px;
   }
 
 }

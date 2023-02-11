@@ -4,7 +4,6 @@ import Skills from "../sections/Skills";
 import Service from "../sections/Service";
 import Portfolio from "../sections/Portfolio";
 import Contacts from "../sections/Contacts";
-import {Parallax, ParallaxLayer} from '@react-spring/parallax'
 import Head from "next/head";
 
 const Index = () => {
@@ -12,11 +11,11 @@ const Index = () => {
     return (
         <>
             <Head>
-                <title>kejero.pw</title>
+                <title>Петерс Максим</title>
                 <meta property="og:title" content="Креативный веб-разработчик" key="title"/>
                 <meta name="author" content="Петерс Максим"/>
-                <meta name="description" content="Создаю креативные веб-интерфейсы с уклоном
-                на производительность и оптимизацию"/>
+                <meta name="description" content="Создаю креативные веб-интерфейсы с уклоном на производительность
+                и юзабилити."/>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="shortcut icon" href="https://i.ibb.co/rmK589z/2.png" type="image/x-icon"/>
                 <meta name="copyright" lang="ru" content="kejero.pw" />

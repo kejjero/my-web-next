@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
                 <div className={s.footer__top}>
                     <div className={s.footer__logoLink}>
                         <Link href="/">
-                            <Image src={logo}/>
+                            <Image src={logo} draggable={false}/>
                         </Link>
                     </div>
                     <nav>
@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
                     </nav>
                 </div>
                 <div className={s.footer__bottom}>
-                    <p className={s.footer__author}>© kejero 2021-2022</p>
+                    <p className={s.footer__author}>© kejero 2021-2023</p>
                     <ul className={s.footer__socials}>
                         {
                             ARRAY_SOCIALS.map((item, i) => (

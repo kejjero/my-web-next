@@ -4,15 +4,14 @@ import ava from "../images/ava.jpg"
 import Label from "../components/Label";
 import Marquee from "react-fast-marquee";
 import React, {useEffect, useState} from "react";
-import {useTrail, a} from "react-spring";
 import {motion} from "framer-motion"
-import {RightOutlined} from "@ant-design/icons";
 import { Button } from 'antd';
 import 'antd/dist/antd.css';
+import {MARQUEE_ITEMS} from "../utils/constants";
 
 
 const Intro: React.FC = () => {
-    const marqueeItems = ["мобильные приложения", "дизайн", "web-интерфейсы","Векторная графика", "Typescript", "Иллюстрации", "React", "Анимации", "SPA / SSR"]
+
     const stylesLabel = {paddingBottom: 2, paddingRight: 5}
     const [widthLabel, setWidthLabel] = useState<number>()
 
@@ -57,37 +56,40 @@ const Intro: React.FC = () => {
                         2D/3D Graphics
                     </motion.p>
                     <motion.div custom={7} variants={textAnimation} className={s.intro__buttons}>
+                      <a href="#about">
                         <Button
-                            size="large"
-                            type="primary"
-                            style={{
-                                minHeight: "45px",
-                                minWidth: "150px",
-                                backgroundColor: "#000",
-                                color: "#fff",
-                                borderColor: "#000",
-                                borderRadius: "0"
-                        }}
+                          size="large"
+                          type="primary"
+                          style={{
+                            minHeight: "45px",
+                            minWidth: "150px",
+                            backgroundColor: "#000",
+                            color: "#fff",
+                            borderColor: "#000",
+                            borderRadius: "0"
+                          }}
                         >
-                            Подробнее
+                          Подробнее
                         </Button>
-
+                      </a>
+                      <a href="#contacts">
                         <Button
-                            size="large"
-                            style={{
-                                minHeight: "45px",
-                                minWidth: "120px",
-                                backgroundColor: "#F2F1EF",
-                                borderRadius: "0",
-                                borderColor: "#000",
-                                color: "#000"
-                        }}
+                          size="large"
+                          style={{
+                            minHeight: "45px",
+                            minWidth: "120px",
+                            backgroundColor: "#F2F1EF",
+                            borderRadius: "0",
+                            borderColor: "#000",
+                            color: "#000"
+                          }}
                         >
-                            Подробнее
+                          Контакты
                         </Button>
+                      </a>
                     </motion.div>
                 </div>
-                <Image className={s.intro__avatar} src={ava} width={550} height={550}/>
+                <Image draggable={false} priority className={s.intro__avatar} src={ava} width={550} height={550}/>
             </div>
             <div className={s.intro__marqueeWrapper}>
                 <Marquee
@@ -97,7 +99,7 @@ const Intro: React.FC = () => {
                 >
                     <p className={s.intro__marquee_text}>
                         {
-                            marqueeItems.map((item, i) => {
+                          MARQUEE_ITEMS.map((item, i) => {
                                 return (
                                     <span key={i} className={s.intro__marquee_item}>
                                     {item}

@@ -1,0 +1,6 @@
+export const config = {
+  SERVICE_KEY: process.env.NEXT_PUBLIC_SERVICE_KEY,
+  TEMPLATE_KEY: process.env.NEXT_PUBLIC_TEMPLATE_KEY,
+  PUBLIC_KEY: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+  CAPTCHA_KEY: process.env.NEXT_PUBLIC_CAPTCHA_KEY,
+}

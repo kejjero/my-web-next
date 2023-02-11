@@ -72,6 +72,7 @@ const Work: React.FC<IWork> = ({item}) => {
                     </>
                 }
                 <Image
+                    placeholder='blur'
                     src={item.image}
                     className={`portfolio__image`}
                     height={heightImage}
@@ -95,11 +96,11 @@ const Work: React.FC<IWork> = ({item}) => {
                         ))
                     }
                 </ul>
-                <Link href={item.link}>
+                <a href={item.link} target='_blank'>
                     <Button className={s.portfolio__workButton} type="primary" size="large">
                         Подробнее
                     </Button>
-                </Link>
+                </a>
             </div>
         </motion.li>
     )

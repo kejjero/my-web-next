@@ -1,128 +1,240 @@
 import contacts from "../scss/modules/contacts.module.scss"
-import TopSection from "../components/TopSection";
+import TopSection from "../components/TopSection"
 import hash from "../images/hash.svg"
-import Image from "next/image";
-import React, {useEffect} from "react";
-import {motion} from "framer-motion";
-import {useForm} from "react-hook-form";
-import s from "../scss/modules/contacts.module.scss";
-import * as yup from "yup";
-import {yupResolver} from "@hookform/resolvers/yup";
-import 'antd/dist/antd.css';
-import { Input } from 'antd';
-import { Button } from 'antd';
-import InputForm from "../components/InputForm";
+import Image from "next/image"
+import React, {memo, useEffect, useRef, useState} from "react"
+import {motion} from "framer-motion"
+import s from "../scss/modules/contacts.module.scss"
+import 'antd/dist/antd.css'
+import {Form, Input, Popover, message} from 'antd'
+import {Button} from 'antd'
+import emailjs from '@emailjs/browser'
+import ReCAPTCHA from "react-google-recaptcha"
+import {config} from "../config";
+
 
 const Contacts: React.FC = () => {
-    const onSubmit = data => console.log(data);
-    const { TextArea } = Input;
-    const sectionAnimation = {
-        hidden: {
-            y: 30,
-            opacity: 0
-        },
-        visible: custom => ({
-            y: 0,
-            opacity: 1,
-            transition: {delay: custom * 0.1}
+  const {TextArea} = Input
+  const form = useRef(null)
+  const [open, setOpen] = useState(false)
+  const key = 'updatable'
+  const antForm = useRef(null)
+  const [timeLeft, setTimeLeft] = useState(0)
+  const [pushDate, setPushDate] = useState(null)
+
+  useEffect(() => {
+    let date
+    if (pushDate) {
+      date = pushDate
+    } else {
+      date = Number(JSON.parse(localStorage.getItem('dt')))
+    }
+    if (date) {
+      const moveSeconds = Math.round((date + 600000  - new Date().getTime()) / 1000)
+      moveSeconds >= 600 ? setTimeLeft(0) : setTimeLeft(moveSeconds)
+    }
+  },[pushDate])
+
+  const hide = () => {
+    setOpen(false)
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft((timeLeft) => timeLeft >= 1 ? timeLeft - 1 : 0)
+    },1000)
+    return () => clearInterval(interval)
+  },[])
+
+
+  const getPadTime = (time) => time.toString().padStart(2, 0)
+
+  const minutes = Math.floor(timeLeft / 60)
+  const seconds = getPadTime(timeLeft - minutes * 60)
+
+  const sectionAnimation = {
+    hidden: {
+      y: 30,
+      opacity: 0
+    },
+    visible: custom => ({
+      y: 0,
+      opacity: 1,
+      transition: {delay: custom * 0.1}
+    })
+  }
+
+  const onFinish = (value) => {
+    if (value) {
+      setOpen(!open)
+    }
+  }
+
+  const setMessage = async () => {
+    hide()
+    message.open({
+      key,
+      type: 'loading',
+      content: 'Загрузка...',
+    })
+
+    emailjs.sendForm(
+      config.SERVICE_KEY,
+      config.TEMPLATE_KEY,
+      form.current.children[0],
+      config.PUBLIC_KEY
+    )
+      .then(() => {
+        message.open({
+          key,
+          type: 'success',
+          content: 'Сообщение отправлено!',
+          duration: 2,
         })
+        localStorage.setItem('dt', JSON.stringify(new Date().getTime()))
+        setPushDate(Number(JSON.parse(localStorage.getItem('dt'))))
+        resetForm()
+      }, () => {
+        message.open({
+          key,
+          type: 'error',
+          content: 'Произошла ошибка :(',
+          duration: 2,
+        })
+      })
+  }
+
+  const resetForm = () => {
+    antForm?.current?.resetFields()
+  }
+
+  const FormCaptcha = memo(() => {
+    const recaptchaRef = React.useRef<HTMLFormElement | null>(null)
+    const [activeAcceptButton, setActiveAcceptButton] = useState<boolean>(false)
+
+
+    const onChangeWithReCAPTCHA = (value) => {
+      if (value) {
+        setActiveAcceptButton(true)
+      }
     }
 
-    const schema = yup.object().shape({
-        email: yup.string()
-            .required("Вы не заполнили")
-            .email('некорректная почта'),
-        title: yup.string()
-            .required("Вы не заполнили")
-            .min(2, 'минимум 2 символа')
-            .max(35, 'максимум 35 символов'),
-        message: yup.string()
-            .required("Вы не заполнили")
-            .min(2, 'минимум 5 символов')
-            .max(250, 'максимум 250 символов'),
-    })
-
-    type FormValues = {
-        email: string;
-        title: string;
-        message: string;
-    };
-
-
-    const {register, handleSubmit, formState: {errors}} = useForm<FormValues>({
-        mode: 'onBlur',
-        resolver: yupResolver(schema),
-    })
-
     return (
-        <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{amount: 0.2, once: true}}
-            className={contacts.contacts}
-        >
-            <div className={contacts.contacts__hash}>
-                <Image src={hash}/>
-            </div>
-            <motion.div
-                custom={1}
-                variants={sectionAnimation}
-                className={contacts.contacts__wrapper}
-                id="contacts"
-            >
-                <TopSection title="Контакты" subtitle="открыт к сотрудничеству"/>
-                <form noValidate className={contacts.contacts__form} onSubmit={handleSubmit(onSubmit)}>
+      <form className={contacts.captcha}>
+        <ReCAPTCHA
+          ref={recaptchaRef}
+          sitekey={config.CAPTCHA_KEY}
+          onChange={onChangeWithReCAPTCHA}
+        />
+        <div className={contacts.captcha__buttons}>
+          <Button htmlType='button' type="primary" disabled={!activeAcceptButton} onClick={() => setMessage()}>Отправить</Button>
+          <Button htmlType='button' type="default" onClick={hide}>Отмена</Button>
+        </div>
+      </form>
+    )
+  })
+
+
+  return (
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{amount: 0.2, once: true}}
+      className={contacts.contacts}
+    >
+      <div className={contacts.contacts__hash}>
+        <Image src={hash} draggable={false}/>
+      </div>
+      <motion.div
+        custom={1}
+        variants={sectionAnimation}
+        className={contacts.contacts__wrapper}
+        id="contacts"
+      >
+        <TopSection title="Контакты" subtitle="открыт к сотрудничеству"/>
+        <span ref={form}>
+          <Form
+            ref={antForm}
+            name="basic"
+            initialValues={{remember: true}}
+            onFinish={onFinish}
+            autoComplete='true'
+            className={contacts.contacts__form}
+          >
                     <label className={contacts.contacts__label}>
                         <div className={s.contacts__inputWrapper}>
                             <span className={s.contacts__inputSpan}>Почта</span>
-                            <InputForm
-                                size="large"
-                                className={s.contacts__input}
-                                type="email"
-                                placeholder="name@mail.ru"
-                                title="Почта"
-                                {...register("email", {required: true})}
-                            />
-                            {
-                                <span className={s.contacts__error}>{errors?.email?.message}</span>
-                            }
+                            <Form.Item
+                              name="email"
+                              rules={[{required: true, message: 'Некорректная почта', type: 'email'}]}
+                            >
+                                <Input
+                                  className={s.contacts__input}
+                                  size="large"
+                                  type="email"
+                                  placeholder="name@mail.ru"
+                                  title="Email"
+                                  name="email"
+                                />
+                            </Form.Item>
                         </div>
                         <div className={s.contacts__inputWrapper}>
                             <span className={s.contacts__inputSpan}>Тема сообщения</span>
-                            <InputForm
-                                size="large"
-                                className={s.contacts__input}
-                                type="text"
-                                placeholder="Сотрудничество"
-                                title="Почта"
-                                {...register("title", {required: true})}
-                            />
-                            <span className={s.contacts__error}>{errors?.title?.message}</span>
+                            <Form.Item
+                              name="title"
+                              rules={[{required: true, message: 'Пожалуйста, заполните поле'}]}
+                            >
+                                <Input
+                                  className={s.contacts__input}
+                                  size="large"
+                                  type="text"
+                                  placeholder="Сотрудничество"
+                                  title="Title"
+                                  name='title'
+                                  maxLength={30}
+                                />
+                            </Form.Item>
                         </div>
                     </label>
                     <div className={s.contacts__inputWrapper}>
                         <span className={s.contacts__inputSpan}>Сообщение</span>
-                        <TextArea
-                            size="large"
-                            rows={7}
-                            className={s.contacts__input}
-                            placeholder="Текст сообщения"
-                            {...register("message", {required: true})}
-                        />
-                        <span className={s.contacts__error}>{errors?.message?.message}</span>
+                        <Form.Item
+                          name="message"
+                          rules={[{required: true, message: 'Пожалуйста, заполните поле'}]}
+                        >
+                            <TextArea
+                              name='message'
+                              size="large"
+                              rows={7}
+                              maxLength={400}
+                              className={s.contacts__input}
+                              placeholder="Текст сообщения"
+                            />
+                        </Form.Item>
                     </div>
-                    <Button
-                        type="primary"
-                        style={{width: "100%"}}
-                        size="large"
-                        disabled={!!errors.message}
-                    >
-                        Отправить сообщение
-                    </Button>
-                </form>
-            </motion.div>
-        </motion.section>
-    )
+              <Popover content={<FormCaptcha />} title="Подтвердите, что вы не робот" open={open}>
+                    <Form.Item style={{width: '100%'}}>
+                            <Button
+                              type="primary"
+                              style={{width: "100%"}}
+                              size="large"
+                              htmlType='submit'
+                              disabled={timeLeft !== 0 && timeLeft <= 600}
+                            >
+                              {
+                                timeLeft !== 0 && timeLeft <= 600 ?
+                                  `Осталось ${minutes > 0 ? minutes + ' мин. ' : ''} ${seconds} сек.`
+                                  :
+                                  `Отправить сообщение`
+                              }
+                        </Button>
+                    </Form.Item>
+              </Popover>
+                </Form>
+                </span>
+      </motion.div>
+    </motion.section>
+  )
 }
 
 export default Contacts;

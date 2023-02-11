@@ -27,8 +27,6 @@ export const Navigation = ({toggle, isOpen}) => {
         clearTimeout(timeout(false, 0))
     },[isOpen])
 
-    console.log(isVisible)
-
     return (
         <div className={s.wrapperItems} style={!isVisible ? {} : styleDisabled }>
             <motion.ul variants={variants} className={s.items}>

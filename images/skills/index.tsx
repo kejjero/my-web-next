@@ -21,3 +21,10 @@ export {default as figma} from './figma.svg';
 export {default as illustrator} from './illustrator.svg';
 export {default as photoshop} from './photoshop.svg';
 export {default as after_effects} from './after_effects.svg';
+export {default as ant} from './ant.svg'
+export {default as ubuntu} from './ubuntu.svg'
+export {default as nginx} from './nginx.svg'
+export {default as passport} from './passport.svg'
+export {default as query} from './query.svg'
+export {default as cinema} from './cinema.png'
+export {default as jwt} from './jwt.svg'

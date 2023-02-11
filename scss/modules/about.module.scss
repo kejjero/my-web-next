@@ -94,6 +94,12 @@
     font-weight: 200;
     font-size: 18px;
     line-height: 32px;
+    letter-spacing: 0.4px;
+
+    @media screen and (max-width: 520px) {
+      font-weight: 300;
+      color: #1c1b1a;
+    }
   }
 
   &__link {
@@ -103,6 +109,11 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  &__rofl {
+    color: #4B98F2;
+    cursor: default;
   }
 
   &__info {

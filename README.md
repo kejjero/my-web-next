@@ -1,3 +1,9 @@
 # my-web-next
 
-My website: www.kejero.pw
+**.env**
+```
+NEXT_PUBLIC_SERVICE_KEY
+NEXT_PUBLIC_TEMPLATE_KEY
+NEXT_PUBLIC_PUBLIC_KEY
+NEXT_PUBLIC_CAPTCHA_KEY
+```

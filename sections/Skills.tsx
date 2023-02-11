@@ -1,23 +1,18 @@
 import section from "../scss/modules/section.module.scss"
 import skills from "../scss/modules/skills.module.scss"
-import TopSection from "../components/TopSection";
-import React, {useEffect, useRef, useState} from "react";
-import {SKILLS} from "../utils/constants";
-import MySkills from "../components/MySkills";
-import { motion } from "framer-motion";
+import TopSection from "../components/TopSection"
+import React, {useEffect, useState} from "react"
+import {SKILLS} from "../utils/constants"
+import { motion } from "framer-motion"
+import { Radio } from 'antd'
+import 'antd/dist/antd.css'
 import SwiperSkills from "../components/SwiperSkills";
-import { Radio } from 'antd';
-import 'antd/dist/antd.css';
 
 const Skills: React.FC = () => {
-    const buttons  = [{title: "Frontend"}, {title: "Backend"}, {title: "Графика"}]
+    const buttons  = [{title: "Frontend"}, {title: "Backend"}, {title: "Graphics"}]
     const [activeIndex, setActiveIndex] = useState(0);
     const [filterSkills, setFilterSkills] = useState([]);
     const [width, setWidth] = useState<number>();
-
-    const onClickButton = (i) => {
-        setActiveIndex(i)
-    }
 
     useEffect(() => {
         const currentSkills = SKILLS.filter((item) => item.activeIndex === activeIndex)
@@ -59,7 +54,7 @@ const Skills: React.FC = () => {
                                         style={{backgroundColor: "#F2F1EF"}}
                                         key={item.title}
                                         value={item.title}
-                                        onClick={() => onClickButton(i)}
+                                        onClick={() => setActiveIndex(i)}
                                     >
                                         {item.title}
                                     </Radio.Button>
@@ -67,13 +62,7 @@ const Skills: React.FC = () => {
                             }
                         </Radio.Group>
                     </div>
-                    {
-                        width > 520 ?
-                            <MySkills filterSkills={filterSkills}/>
-                            :
-                            <SwiperSkills filterSkills={filterSkills} />
-
-                    }
+                    <SwiperSkills width={width} filterSkills={filterSkills}/>
                 </div>
             </div>
         </motion.section>

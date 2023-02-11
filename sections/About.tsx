@@ -6,13 +6,13 @@ import {motion} from "framer-motion";
 const About: React.FC = () => {
     const labelStyles = {paddingTop: 4}
     const info = [
-        {title: "Резюме", value: "@resume", link: "https://hh.ru/resume/b071ac9cff09e030b20039ed1f657659444e61"},
-        {title: "CG Арты", value: "@kejero.arts", link: "https://www.instagram.com/kejero.arts"},
-        {title: "youtube", value: "@kejero.it", link: ""}
+        {title: "telegram", value: "@kejRRR", link: "https://t.me/kejRRR"},
+        {title: "github", value: "@kejjero", link: "https://github.com/kejjero"},
+        {title: "cg arts", value: "@arts", link: "https://www.instagram.com/kejero.arts"},
     ]
     const stats = [
-        {title: "год опыта разработки", value: "1+"},
-        {title: "реализованных проектов", value: "7"},
+        {title: "реализованных проектов", value: "8"},
+        {title: "года опыта веб-разработки", value: "2+"},
         {title: "hard skills", value: "20+"}
     ]
 
@@ -52,6 +52,7 @@ const About: React.FC = () => {
         })
     }
 
+
     return (
         <motion.section
             initial="hidden"
@@ -70,17 +71,19 @@ const About: React.FC = () => {
                     </div>
                     <div className={s.about__wrapper_about}>
                         <motion.h3 custom={3} variants={topRightAnimation} className={s.about__titleAbout}>
-                            Создаю креативные веб-интерфейсы с уклоном на производительность и оптимизацию.
+                            Создаю креативные веб-интерфейсы с уклоном на производительность и юзабилити.
                         </motion.h3>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                            Чаще всего я работаю c фронтендом
-                            в стеках <a className={s.about__link} href="https://ru.reactjs.org/" target="_blank">React</a> / <a className={s.about__link} href="https://ru.vuejs.org/" target="_blank">Vue</a> и
-                            с сопутствующими
-                            к ним библиотеками. Со всей страстью подхожу к изучению новых технологий,
-                            а также всегда стараюсь поддерживать качество и читабельность кода.
+                              Я <span className={s.about__rofl}> Frontend / Full Stack </span>
+                            разработчик в стеке <a
+                          className={s.about__link} href="https://reactjs.org/" target='_blank'>React</a>, <a
+                          className={s.about__link} href="https://www.typescriptlang.org/" target='_blank'>TypeScript</a> и <a
+                          className={s.about__link} href="https://nestjs.com/" target='_blank'>Nest.js</a>.
+                            Со страстью подхожу к изучению новых технологий, а так же всегда забочусь
+                            о качестве и масштабируемости своего кода.
                         </motion.p>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                            Помимо разработки, я занимаюсь созданием UI дизайна, рисую красочные иллюстрации
+                            Помимо разработки, занимаюсь созданием UI дизайна, рисую красочные иллюстрации
                             и понемногу практикуюсь в анимациях. А в качестве хобби иду в направлении цифровой
                             графики, искусства и блогерства.
                         </motion.p>
