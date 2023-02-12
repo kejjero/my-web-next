@@ -24,8 +24,8 @@ const Service: React.FC = () => {
       </p>
     },
     {
-      title: <h4 className={s.service__cardTitle}>FullStack</h4>,
-      text: <p className={s.service__cardText}>Готов взяться за FullStack проект под ключ с отрисовкой
+      title: <h4 className={s.service__cardTitle}>Full Stack</h4>,
+      text: <p className={s.service__cardText}>Готов взяться за Full Stack проект под ключ с отрисовкой
         дизайна, создания сервера и веб-интерфейса. Так же владею навыками сборки, настройки и развёртывания приложений
         на <a className={s.service__link} href="https://thecode.media/ubuntu-linux/" target="_blank">Ubuntu</a>.</p>
     },

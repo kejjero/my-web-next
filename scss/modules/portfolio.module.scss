@@ -30,8 +30,10 @@
         order: 2;
       }
 
-      .portfolio__workWrapper {
-        margin: 0 20px;
+      @media screen and (max-width: 1120px) {
+        .portfolio__workWrapper {
+          margin: 0 20px;
+        }
       }
     }
 
