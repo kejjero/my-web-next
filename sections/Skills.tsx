@@ -28,7 +28,7 @@ const Skills: React.FC = () => {
         visible: custom  => ({
             y: 0,
             opacity: 1,
-            transition: {delay: custom * 0.1}
+            transition: {delay: custom * 0.1, ease: [0, 0.2, 0.5, 0.8], duration: 1.5, type:"spring"}
         })
     }
 

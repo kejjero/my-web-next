@@ -41,13 +41,13 @@ const Service: React.FC = () => {
 
   const sectionAnimation = {
     hidden: {
-      y: 100,
+      y: 50,
       opacity: 0
     },
     visible: custom => ({
       y: 0,
       opacity: 1,
-      transition: {delay: custom * 0.1}
+      transition: {delay: custom * 0.1, ease: [0, 0.2, 0.5, 0.8], duration: 1.5, type:"spring"}
     })
   }
 

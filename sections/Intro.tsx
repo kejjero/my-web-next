@@ -25,13 +25,15 @@ const Intro: React.FC = () => {
 
     const textAnimation = {
         hidden: {
-            x: -100,
-            opacity: 0
+          x: -50,
+          opacity: 0,
+          rotation: 0.02,
         },
         visible: custom  => ({
-            x: 0,
-            opacity: 1,
-            transition: {delay: custom * 0.1}
+          x: 0,
+          opacity: 1,
+          rotation: 0,
+          transition: {delay: custom * 0.2, ease: [0, 0.2, 0.5, 0.8], duration: 1.5, type:"spring"}
         })
     }
 
@@ -48,7 +50,7 @@ const Intro: React.FC = () => {
                         <motion.p custom={3} variants={textAnimation} className={s.intro__title}>Привет, я Максим</motion.p>
                         <motion.span custom={4} variants={textAnimation} className={s.intro__title}>
                             <Label width={widthLabel} styles={stylesLabel}/> креативный
-                            <motion.p custom={5} variants={textAnimation} className={s.intro__title}>веб-разработчик.</motion.p>
+                            <motion.p custom={4} variants={textAnimation} className={s.intro__title}>веб-разработчик.</motion.p>
                         </motion.span>
                     <motion.p custom={6} variants={textAnimation} className={s.intro__directions}>
                         Frontend <span className={s.intro__directions_and}>&&</span>
