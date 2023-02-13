@@ -81,25 +81,25 @@ export const works = [
             {skill: "Nest.js"}, {skill: "MongoDB"}, {skill: "Nest.js"}
         ]
     },
+    // {
+    //     title: 'Марсик', about: 'Сервис марсианской доставки еды',tag: 'Проекты', image: work2, linkId: "marsik", link: "https://github.com/kejjero/mars-food",
+    //     stack: [
+    //         {skill: "TypeScript"}, {skill: "React"}, {skill: "Redux Toolkit"},
+    //         {skill: "SCSS"}, {skill: "Material UI"}, {skill: "Swiper"},
+    //         {skill: "Lodash"}, {skill: "React Router"}, {skill: "React Skeleton"},
+    //         {skill: "Axios"}, {skill: "LottieFiles animations"},
+    //     ]
+    // },
+    // {
+    //     title: 'Mesto', about: 'Сервис загрузки фотографий из путешествий',tag: 'Проекты', image: work3, linkId: "mesto", link: "https://github.com/kejjero/react-mesto-api-full",
+    //     stack: [
+    //         {skill: "HTML"}, {skill: "CSS"}, {skill: "React"}, {skill: "Webpack"},
+    //         {skill: "React Router"}, {skill: "Node.js"}, {skill: "MongoDB"},
+    //         {skill: "Express.js"},
+    //     ]
+    // },
     {
-        title: 'Марсик', about: 'Сервис марсианской доставки еды',tag: 'Проекты', image: work2, linkId: "marsik", link: "https://github.com/kejjero/mars-food",
-        stack: [
-            {skill: "TypeScript"}, {skill: "React"}, {skill: "Redux Toolkit"},
-            {skill: "SCSS"}, {skill: "Material UI"}, {skill: "Swiper"},
-            {skill: "Lodash"}, {skill: "React Router"}, {skill: "React Skeleton"},
-            {skill: "Axios"}, {skill: "LottieFiles animations"},
-        ]
-    },
-    {
-        title: 'Mesto', about: 'Сервис загрузки фотографий из путешествий',tag: 'Проекты', image: work3, linkId: "mesto", link: "https://github.com/kejjero/react-mesto-api-full",
-        stack: [
-            {skill: "HTML"}, {skill: "CSS"}, {skill: "React"}, {skill: "Webpack"},
-            {skill: "React Router"}, {skill: "Node.js"}, {skill: "MongoDB"},
-            {skill: "Express.js"},
-        ]
-    },
-    {
-        title: 'Дока', about: 'Автор доки по событию Change',tag: 'Open Source', image: doka, linkId: "doka", link: "https://doka.guide/js/event-change/",
+        title: 'Дока', about: 'Контребьютер Доки по JavaScript-событию change()',tag: 'Open Source', image: doka, linkId: "doka", link: "https://github.com/doka-guide/content/pull/4057",
         stack: []
     }
 ]
