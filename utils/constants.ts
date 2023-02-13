@@ -99,7 +99,7 @@ export const works = [
     //     ]
     // },
     {
-        title: 'Дока', about: 'Контребьютер Доки по JavaScript-событию change()',tag: 'Open Source', image: doka, linkId: "doka", link: "https://github.com/doka-guide/content/pull/4057",
+        title: 'Дока', about: 'Контрибьютер Доки по JavaScript-событию change()',tag: 'Open Source', image: doka, linkId: "doka", link: "https://github.com/doka-guide/content/pull/4057",
         stack: []
     }
 ]
