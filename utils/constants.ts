@@ -9,8 +9,6 @@ import {
     photoshop, after_effects, ubuntu, nginx, passport, query, cinema, jwt
 } from "../images/skills"
 import work1 from "../images/work.jpg";
-import work2 from "../images/work2.png";
-import work3 from "../images/work3.jpg";
 import doka from '../images/doka.png'
 
 export const ARRAY_MENU = [
@@ -49,13 +47,15 @@ export const SKILLS = [
     {title: "SCSS / modules", icon: scss, description: "", activeIndex: 0},
     {title: "Axios", icon: axios, description: "", activeIndex: 0},
     {title: "Ant Design", icon: ant, description: "", activeIndex: 0},
-    {title: "Next.js", icon: next, description: "", activeIndex: 0},
     {title: "WebPack", icon: webpack, description: "", activeIndex: 0},
     {title: "Material UI", icon: mui, description: "", activeIndex: 0},
     {title: "Jest & Enzyme", icon: jest, description: "", activeIndex: 0},
     {title: "React Query", icon: query, description: "", activeIndex: 0},
+    {title: "Next.js", icon: next, description: "", activeIndex: 0},
     {title: "React Hook Form", icon: form, description: "", activeIndex: 0},
     {title: "React Router", icon: router, description: "", activeIndex: 0},
+    {title: "HTML5", icon: html, description: "", activeIndex: 0},
+    {title: "CSS3", icon: css, description: "", activeIndex: 0},
     {title: "Node.js", icon: nodejs, description: "", activeIndex: 1},
     {title: "Express.js", icon: express, description: "", activeIndex: 1},
     {title: "MongoDB", icon: mongodb, description: "", activeIndex: 1},
@@ -82,7 +82,7 @@ export const works = [
         ]
     },
     {
-        title: 'Дока', about: 'Контрибьютер Доки по JavaScript-событию change()',tag: 'Open Source', image: doka, linkId: "doka", link: "https://github.com/doka-guide/content/pull/4057",
+        title: 'Дока', about: 'Контрибьютер по JavaScript-событию change()',tag: 'Open Source', image: doka, linkId: "doka", link: "https://github.com/doka-guide/content/pull/4057",
         stack: []
     }
 ]
