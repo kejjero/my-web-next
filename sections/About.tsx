@@ -74,7 +74,7 @@ const About: React.FC = () => {
                             Создаю креативные веб-интерфейсы с уклоном на производительность и юзабилити.
                         </motion.h3>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                              Я <span className={s.about__rofl}> Frontend / Full Stack </span>
+                              Я <span className={s.about__rofl}> Frontend </span> / <span className={s.about__rofl}>Full Stack </span>
                             разработчик в стеке <a
                           className={s.about__link} href="https://reactjs.org/" target='_blank'>React</a>, <a
                           className={s.about__link} href="https://www.typescriptlang.org/" target='_blank'>TypeScript</a> и <a

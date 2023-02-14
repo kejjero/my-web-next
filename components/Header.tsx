@@ -11,7 +11,7 @@ const Header: React.FC<any> = () => {
         <header className={s.header}>
                 <div className={s.header__wrapper}>
                     <Link href="/">
-                        <Image draggable={false} priority src={logo} className={s.header__logo}/>
+                        <Image draggable={false} priority src={logo} className={s.header__logo} alt='Логотип'/>
                     </Link>
                     <Menu/>
                 </div>

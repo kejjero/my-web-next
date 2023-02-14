@@ -4,7 +4,7 @@ import Skills from "../sections/Skills";
 import Service from "../sections/Service";
 import Portfolio from "../sections/Portfolio";
 import Contacts from "../sections/Contacts";
-import Head from "next/head";
+import Head from 'next/head'
 
 const Index = () => {
 
@@ -28,6 +28,7 @@ const Index = () => {
                       фрилансер, фриланс, сайт-портфолио,
                       создать сайт, React, TypeScript,"
                 />
+
             </Head>
             <Intro/>
             <About/>

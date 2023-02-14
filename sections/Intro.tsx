@@ -47,17 +47,17 @@ const Intro: React.FC = () => {
         >
             <div className={s.intro__wrapper}>
                 <div className={s.intro__conitainText}>
-                        <motion.p custom={3} variants={textAnimation} className={s.intro__title}>Привет, я Максим</motion.p>
-                        <motion.span custom={4} variants={textAnimation} className={s.intro__title}>
+                        <motion.p custom={1} variants={textAnimation} className={s.intro__title}>Привет, я Максим</motion.p>
+                        <motion.span custom={2} variants={textAnimation} className={s.intro__title}>
                             <Label width={widthLabel} styles={stylesLabel}/> креативный
-                            <motion.p custom={4} variants={textAnimation} className={s.intro__title}>веб-разработчик.</motion.p>
+                            <motion.p custom={2} variants={textAnimation} className={s.intro__title}>веб-разработчик.</motion.p>
                         </motion.span>
-                    <motion.p custom={6} variants={textAnimation} className={s.intro__directions}>
+                    <motion.p custom={4} variants={textAnimation} className={s.intro__directions}>
                         Frontend <span className={s.intro__directions_and}>&&</span>
                         Backend <span className={s.intro__directions_and}>&&</span>
                         2D/3D Graphics
                     </motion.p>
-                    <motion.div custom={7} variants={textAnimation} className={s.intro__buttons}>
+                    <motion.div custom={5} variants={textAnimation} className={s.intro__buttons}>
                       <a href="#about">
                         <Button
                           size="large"
@@ -91,7 +91,15 @@ const Intro: React.FC = () => {
                       </a>
                     </motion.div>
                 </div>
-                <Image draggable={false} priority className={s.intro__avatar} src={ava} width={550} height={550}/>
+                <Image
+                  alt='Аватар'
+                  draggable={false}
+                  priority
+                  className={s.intro__avatar}
+                  src={ava}
+                  width={550}
+                  height={550}
+                />
             </div>
             <div className={s.intro__marqueeWrapper}>
                 <Marquee

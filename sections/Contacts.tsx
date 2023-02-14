@@ -188,6 +188,7 @@ const Contacts: React.FC = () => {
                               rules={[{required: true, message: 'Пожалуйста, заполните поле'}]}
                             >
                                 <Input
+                                  alt='абстракция'
                                   className={s.contacts__input}
                                   size="large"
                                   type="text"

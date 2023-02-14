@@ -103,6 +103,7 @@
   }
 
   &__link {
+    font-weight: 300;
     color: #4B98F2;
     text-decoration: none;
 
@@ -112,8 +113,8 @@
   }
 
   &__rofl {
+    font-weight: 400;
     color: #4B98F2;
-    cursor: default;
   }
 
   &__info {
@@ -196,6 +197,7 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
     color: #4B98F2;
   }

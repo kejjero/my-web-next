@@ -14,7 +14,7 @@ const Path = props => (
 
 export const MenuToggle: any = ({toggle, activeBlock}) => (
     <div>
-        <button onClick={toggle} className={s.button}>
+        <button type='button' onClick={toggle} className={s.button}>
             <div className={`toggle__circle ${activeBlock && "toggle__circle_active"}`}/>
             <svg width="20" height="20" viewBox="0 0 23 23">
                 <Path

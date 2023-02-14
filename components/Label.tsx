@@ -5,7 +5,7 @@ import React from "react";
 import {ILabel} from "../types/components";
 
 const Label: React.FC<ILabel> = ({width, height, styles, isBlack}) => (
-    <Image width={width} height={height} src={isBlack ? labelBlack : label} style={styles}/>
+    <Image alt='логотип' width={width} height={height} src={isBlack ? labelBlack : label} style={styles}/>
 )
 
 export default Label

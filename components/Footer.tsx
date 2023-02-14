@@ -29,17 +29,17 @@ const Footer: React.FC = () => {
                 </div>
                 <div className={s.footer__bottom}>
                     <p className={s.footer__author}>© kejero 2021-2023</p>
-                    <ul className={s.footer__socials}>
+                    <div className={s.footer__socials}>
                         {
                             ARRAY_SOCIALS.map((item, i) => (
-                                <a key={i} href={item.link} target="_blank">
-                                    <li className={s.footer__social}>
-                                        <Image src={item.icon} width={20} height={20} />
-                                    </li>
+                                <a key={i} href={item.link} target="_blank" aria-label='ссылка'>
+                                    <div className={s.footer__social}>
+                                        <Image alt='социальная сеть' src={item.icon} width={20} height={20} />
+                                    </div>
                                 </a>
                             ))
                         }
-                    </ul>
+                    </div>
                 </div>
             </div>
         </footer>

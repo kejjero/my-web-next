@@ -39,7 +39,7 @@ export const Menu = () => {
                 damping: 40
             }
         }
-    };
+    }
 
     useEffect(() => {
         if (isOpen) {

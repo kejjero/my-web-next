@@ -28,15 +28,15 @@ const SwiperSkills = ({filterSkills, width}) => {
 
   const slides = filterSkills.map((item: any, index) => (
     <SwiperSlide key={item.title}>
-      <motion.li
+      <motion.div
         key={item.title}
         className={skills.skills__skillsGroup__skill}
         custom={index++}
         variants={skillAnimation}
       >
-        <Image width={60} height={60} src={item.icon}/>
+        <Image alt={item.title} width={60} height={60} src={item.icon}/>
         <h3 className={skills.skills__title}>{item.title}</h3>
-      </motion.li>
+      </motion.div>
     </SwiperSlide>
     )
   )
