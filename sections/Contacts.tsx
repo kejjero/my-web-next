@@ -31,7 +31,6 @@ const Contacts: React.FC = () => {
     }
     if (date) {
       const moveSeconds = Math.round((Number(date) + 600000  - new Date().getTime()) / 1000)
-      console.log(moveSeconds)
       moveSeconds > 600 ? setTimeLeft(0) : setTimeLeft(moveSeconds)
     }
   },[pushDate])
