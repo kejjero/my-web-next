@@ -4,9 +4,10 @@ import vk from "../images/socials/vk.svg"
 import telegram from "../images/socials/telegram.svg"
 import linkedin from "../images/socials/linkedin.svg"
 import {
-    html, css, scss, js, ts, react, router, redux, form, axios, mui, ant, next,
+    scss, js, ts, react, router, redux, form, axios, mui, ant, next,
     jest, webpack, nodejs, express, mongodb, nest, figma, illustrator,
-    photoshop, after_effects, ubuntu, nginx, passport, query, cinema, jwt
+    photoshop, after_effects, ubuntu, nginx, passport, query, cinema, jwt,
+    storybook, mobx, rtl, rollup
 } from "../images/skills"
 import work1 from "../images/work.jpg";
 import doka from '../images/doka.png'
@@ -44,18 +45,20 @@ export const SKILLS = [
     {title: "TypeScript", icon: ts, description: "", activeIndex: 0},
     {title: "React", icon: react, description: "", activeIndex: 0},
     {title: "Redux", icon: redux, description: "", activeIndex: 0},
+    {title: "MobX", icon: mobx, description: "", activeIndex: 0},
     {title: "SCSS / modules", icon: scss, description: "", activeIndex: 0},
     {title: "Axios", icon: axios, description: "", activeIndex: 0},
     {title: "Ant Design", icon: ant, description: "", activeIndex: 0},
     {title: "WebPack", icon: webpack, description: "", activeIndex: 0},
+    {title: "Rollup", icon: rollup, description: "", activeIndex: 0},
+    {title: "Storybook", icon: storybook, description: "", activeIndex: 0},
     {title: "Material UI", icon: mui, description: "", activeIndex: 0},
     {title: "Jest & Enzyme", icon: jest, description: "", activeIndex: 0},
+    {title: "RTL", icon: rtl, description: "", activeIndex: 0},
     {title: "React Query", icon: query, description: "", activeIndex: 0},
     {title: "Next.js", icon: next, description: "", activeIndex: 0},
     {title: "React Hook Form", icon: form, description: "", activeIndex: 0},
     {title: "React Router", icon: router, description: "", activeIndex: 0},
-    {title: "HTML5", icon: html, description: "", activeIndex: 0},
-    {title: "CSS3", icon: css, description: "", activeIndex: 0},
     {title: "Node.js", icon: nodejs, description: "", activeIndex: 1},
     {title: "Express.js", icon: express, description: "", activeIndex: 1},
     {title: "MongoDB", icon: mongodb, description: "", activeIndex: 1},
@@ -78,7 +81,7 @@ export const works = [
             {skill: "TypeScript"}, {skill: "React"}, {skill: "Redux Toolkit"},
             {skill: "React Query"}, {skill: "Jest & Enzyme"}, {skill: "Material UI"},
             {skill: "React Hook Form"}, {skill: "SCSS/modules"}, {skill: "Axios"},
-            {skill: "Nest.js"}, {skill: "MongoDB"}, {skill: "Nest.js"}
+            {skill: "Nest.js"}, {skill: "Nest.js"}, {skill: "MongoDB"},
         ]
     },
     {

@@ -3,7 +3,7 @@ import skills from "../scss/modules/skills.module.scss";
 import Image from "next/image";
 import React, {useEffect, useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
-import { Grid, Pagination } from "swiper";
+import { Grid, Pagination, FreeMode } from "swiper";
 import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
@@ -59,9 +59,14 @@ const SwiperSkills = ({filterSkills, width}) => {
           }}
           spaceBetween={10}
           pagination={{
+            type: 'progressbar',
             clickable: true,
           }}
-          modules={[Grid, Pagination]}
+          modules={[Grid, Pagination, FreeMode]}
+          freeMode={{
+            momentumRatio: 0.3,
+            sticky: true
+            }}
           className={skills.skills__swiperDesk}
         >
           {slides}

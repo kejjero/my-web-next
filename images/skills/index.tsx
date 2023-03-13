@@ -1,5 +1,3 @@
-export {default as html} from './html.svg';
-export {default as css} from './css.svg';
 export {default as scss} from './sass.svg';
 export {default as js} from './javascript.svg';
 export {default as ts} from './typescript.svg';
@@ -8,7 +6,6 @@ export {default as router} from './react-router.svg';
 export {default as redux} from './redux.svg';
 export {default as form} from './reactHookForm.svg';
 export {default as axios} from './axios.svg';
-export {default as sc} from './sc.png';
 export {default as mui} from './material-ui.svg';
 export {default as next} from './next.svg';
 export {default as jest} from './jest.svg';
@@ -28,3 +25,7 @@ export {default as passport} from './passport.svg'
 export {default as query} from './query.svg'
 export {default as cinema} from './cinema.png'
 export {default as jwt} from './jwt.svg'
+export {default as storybook} from './storybook.svg'
+export {default as mobx} from './mobx.svg'
+export {default as rtl} from './rtl.png'
+export {default as rollup} from './rollup.svg'
