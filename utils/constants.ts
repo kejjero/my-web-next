@@ -7,7 +7,7 @@ import {
     scss, js, ts, react, router, redux, form, axios, mui, ant, next,
     jest, webpack, nodejs, express, mongodb, nest, figma, illustrator,
     photoshop, after_effects, ubuntu, nginx, passport, query, cinema, jwt,
-    storybook, mobx, rtl, rollup
+    storybook, mobx, rtl, rollup, i18next, formik
 } from "../images/skills"
 import work1 from "../images/work.jpg";
 import doka from '../images/doka.png'
@@ -44,20 +44,22 @@ export const SKILLS = [
     {title: "JavaScript", icon: js, description: "", activeIndex: 0},
     {title: "TypeScript", icon: ts, description: "", activeIndex: 0},
     {title: "React", icon: react, description: "", activeIndex: 0},
+    {title: "Next.js", icon: next, description: "", activeIndex: 0},
     {title: "Redux", icon: redux, description: "", activeIndex: 0},
     {title: "MobX", icon: mobx, description: "", activeIndex: 0},
-    {title: "SCSS / modules", icon: scss, description: "", activeIndex: 0},
+    {title: "SCSS", icon: scss, description: "", activeIndex: 0},
     {title: "Axios", icon: axios, description: "", activeIndex: 0},
     {title: "Ant Design", icon: ant, description: "", activeIndex: 0},
     {title: "WebPack", icon: webpack, description: "", activeIndex: 0},
     {title: "Rollup", icon: rollup, description: "", activeIndex: 0},
     {title: "Storybook", icon: storybook, description: "", activeIndex: 0},
-    {title: "Material UI", icon: mui, description: "", activeIndex: 0},
-    {title: "Jest & Enzyme", icon: jest, description: "", activeIndex: 0},
+    {title: "Jest", icon: jest, description: "", activeIndex: 0},
     {title: "RTL", icon: rtl, description: "", activeIndex: 0},
     {title: "React Query", icon: query, description: "", activeIndex: 0},
-    {title: "Next.js", icon: next, description: "", activeIndex: 0},
-    {title: "React Hook Form", icon: form, description: "", activeIndex: 0},
+    {title: "i18next", icon: i18next, description: "", activeIndex: 0},
+    {title: "RHF", icon: form, description: "", activeIndex: 0},
+    {title: "Formik", icon: formik, description: "", activeIndex: 0},
+    {title: "Material UI", icon: mui, description: "", activeIndex: 0},
     {title: "React Router", icon: router, description: "", activeIndex: 0},
     {title: "Node.js", icon: nodejs, description: "", activeIndex: 1},
     {title: "Express.js", icon: express, description: "", activeIndex: 1},

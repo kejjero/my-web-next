@@ -34,7 +34,7 @@ const SwiperSkills = ({filterSkills, width}) => {
         custom={index++}
         variants={skillAnimation}
       >
-        <Image alt={item.title} width={60} height={60} src={item.icon}/>
+        <Image alt={item.title} width={60} height={60} src={item.icon} priority/>
         <h3 className={skills.skills__title}>{item.title}</h3>
       </motion.div>
     </SwiperSlide>
@@ -52,10 +52,10 @@ const SwiperSkills = ({filterSkills, width}) => {
     >
         <Swiper
           onSwiper={setSwiper}
-          slidesPerView={width > 900 ? 5 : 3}
+          slidesPerView={width > 900 ? 6 : 3}
           grid={{
             fill: 'row',
-            rows: 2,
+            rows: 3,
           }}
           spaceBetween={10}
           pagination={{

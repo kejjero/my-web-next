@@ -91,28 +91,25 @@
 
   &__paragraph {
     margin: 10px 0  0;
-    font-weight: 200;
+    font-weight: 300;
     font-size: 18px;
     line-height: 32px;
-    letter-spacing: 0.4px;
-
-    @media screen and (max-width: 520px) {
-      font-weight: 300;
-      color: #1c1b1a;
-    }
+    letter-spacing: 0.2px;
+    color: #232322;
   }
 
   &__link {
     font-weight: 300;
     color: #4B98F2;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
+      color: #e83535;
       text-decoration: underline;
     }
   }
 
-  &__rofl {
+  &__exude {
     font-weight: 400;
     color: #4B98F2;
   }
@@ -124,6 +121,7 @@
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
+    max-width: 450px;
 
     @media screen and (max-width: 955px) {
       max-width: 550px;

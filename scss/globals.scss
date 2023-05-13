@@ -4,6 +4,7 @@ body {
   background-color: #F2F1EF !important;
   color: #161513;
   font-family: 'Open Sans', sans-serif;
+  letter-spacing: -0.1px;
   position: relative;
   margin: 0 auto;
 }
@@ -187,7 +188,7 @@ a {
 
 .swiper-wrapper {
   flex-direction: row !important;
-  row-gap: 20px;
+  row-gap: 30px;
 }
 
 .swiper-pagination {

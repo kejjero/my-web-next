@@ -8,11 +8,11 @@ const About: React.FC = () => {
     const info = [
         {title: "telegram", value: "@kejRRR", link: "https://t.me/kejRRR"},
         {title: "github", value: "@kejjero", link: "https://github.com/kejjero"},
-        {title: "cg arts", value: "@arts", link: "https://www.instagram.com/kejero.arts"},
+        {title: "LinkedIn", value: "@kejero", link: "https://www.linkedin.com/in/kejjero/"},
     ]
     const stats = [
-        {title: "реализованных проектов", value: "8"},
-        {title: "года опыта веб-разработки", value: "2+"},
+        {title: "реализованных проектов", value: "9"},
+        {title: "года опыта разработки", value: "2+"},
         {title: "hard skills", value: "20+"}
     ]
 
@@ -74,16 +74,16 @@ const About: React.FC = () => {
                             Создаю креативные веб-интерфейсы с уклоном на производительность и юзабилити.
                         </motion.h3>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                              Я <span className={s.about__rofl}> Frontend </span> / <span className={s.about__rofl}>Full Stack </span>
+                              Я <span className={s.about__exude}> Frontend </span> / <span className={s.about__exude}>Full Stack </span>
                             разработчик в стеке <a
                           className={s.about__link} href="https://reactjs.org/" target='_blank'>React</a>, <a
                           className={s.about__link} href="https://www.typescriptlang.org/" target='_blank'>TypeScript</a> и <a
                           className={s.about__link} href="https://nestjs.com/" target='_blank'>Nest.js</a>.
-                            Со страстью подхожу к изучению новых технологий, а так же всегда забочусь
+                            С большим интересом подхожу к изучению новых технологий, а так же всегда забочусь
                             о качестве и масштабируемости своего кода.
                         </motion.p>
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
-                            Помимо разработки, занимаюсь созданием UI дизайна, рисую красочные иллюстрации
+                            Помимо веб-разработки, занимаюсь созданием UI дизайна, рисую красочные иллюстрации
                             и понемногу практикуюсь в анимациях. А в качестве хобби иду в направлении цифровой
                             графики, искусства и блогерства.
                         </motion.p>
