@@ -1,4 +1,4 @@
-import s from "../scss/modules/header.module.scss"
+import s from "./Header/header.module.scss"
 
 const Burger = ({setIsOpen, isOpen}) => {
     return(

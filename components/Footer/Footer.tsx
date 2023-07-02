@@ -1,8 +1,8 @@
-import s from "../scss/modules/footer.module.scss"
-import logo from "../images/logoFooter.svg"
+import s from "../../scss/modules/footer.module.scss"
+import logo from "../../images/logoFooter.svg"
 import Image from "next/image";
 import React from "react";
-import {ARRAY_MENU, ARRAY_SOCIALS} from "../utils/constants";
+import {ARRAY_MENU, ARRAY_SOCIALS} from "../../utils/constants";
 import Link from "next/link";
 
 const Footer: React.FC = () => {

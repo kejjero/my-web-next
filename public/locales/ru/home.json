@@ -1,0 +1,15 @@
+
+{
+  "categories": {
+    "genuineParts": "ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ",
+    "nonGenuineParts": "НЕоригинальные ЗАПЧАСТИ",
+    "windshieldWipers": "СТЕКЛООЧИСТИТЕЛИ",
+    "ailsAndFluids": "МАСЛА И ЖИДКОСТИ",
+    "electrical": "ЭЛЕКТРИКА",
+    "partsForMaintenance": "ЗАПЧАСТИ ДЛЯ ТО",
+    "batteries": "АККУМУЛЯТОРЫ",
+    "tools": "ИНСТРУМЕНТЫ",
+    "wheels": "ДИСКИ",
+    "tires": "ШИНЫ"
+  }
+}

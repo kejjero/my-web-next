@@ -1,22 +1,17 @@
 import s from "../scss/modules/portfolio.module.scss"
 import Image from "next/image";
-import button from "../scss/modules/Button.module.scss"
 import React, {useEffect, useState} from "react";
 import {IWork} from "../types/components";
-import Link from "next/link";
-import workLogo from "../images/workLogo.svg"
 import {motion} from "framer-motion";
 import 'antd/dist/antd.css';
 import {Button} from 'antd';
-import {RightOutlined} from "@ant-design/icons";
-import {Divider, Tag} from 'antd';
+
+import {Tag} from 'antd';
 
 const Work: React.FC<IWork> = ({item}) => {
     const [widthImage, setWidthImage] = useState<number>();
     const [heightImage, setHeightImage] = useState<number>();
     const [widthWindow, setWidthWindow] = useState<number>();
-    const [hoverImage, setHoverImage] = useState<boolean>();
-    const [onClickWork, setOnClickWork] = useState<boolean>();
 
     useEffect(() => {
         setWidthWindow(window.screen.width)
@@ -29,18 +24,6 @@ const Work: React.FC<IWork> = ({item}) => {
         }
 
     }, [])
-
-    useEffect(() => {
-        if (onClickWork) {
-            const html = document.querySelector("html")
-            html.classList.add("html_scroll-disabled")
-
-        } else {
-            const html = document.querySelector("html")
-            html.classList.remove("html_scroll-disabled")
-        }
-
-    }, [onClickWork])
 
     const sectionAnimation = {
         hidden: {

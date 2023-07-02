@@ -1,0 +1,15 @@
+
+{
+  "categories": {
+    "genuineParts": "GENUINE PARTS",
+    "nonGenuineParts": "NON GENUINE PARTS",
+    "windshieldWipers": "WINDSHIELD WIPERS",
+    "ailsAndFluids": "OILS AND FLUIDS",
+    "electrical": "ELECTRICAL",
+    "partsForMaintenance": "PARTS FOR MAINTENANCE",
+    "batteries": "BATTERIES",
+    "tools": "TOOLS",
+    "wheels": "WHEELS",
+    "tires": "TIRES"
+  }
+}

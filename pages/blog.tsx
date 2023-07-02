@@ -1,5 +1,5 @@
-import { NextPage } from "next";
-import { MainPage, PageTitle } from '../components'
+import {NextPage} from "next";
+import { PageTitle, BlogPage } from '../components'
 
 const Home: NextPage = () => {
   const title = 'Петерс Максим - Frontend | Fullstack разработчик';
@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   return (
     <>
       <PageTitle title={title} description={description} />
-      <MainPage />
+      <BlogPage />
     </>
   );
 };

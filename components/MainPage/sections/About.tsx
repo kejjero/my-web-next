@@ -1,5 +1,5 @@
-import s from "../scss/modules/about.module.scss"
-import Label from "../components/Label";
+import s from "../../../scss/modules/about.module.scss"
+import Label from "../../Label";
 import React from "react";
 import {motion} from "framer-motion";
 
@@ -76,9 +76,9 @@ const About: React.FC = () => {
                         <motion.p custom={4} variants={topRightAnimation} className={s.about__paragraph}>
                               Я <span className={s.about__exude}> Frontend </span> / <span className={s.about__exude}>Full Stack </span>
                             разработчик в стеке <a
-                          className={s.about__link} href="https://reactjs.org/" target='_blank'>React</a>, <a
-                          className={s.about__link} href="https://www.typescriptlang.org/" target='_blank'>TypeScript</a> и <a
-                          className={s.about__link} href="https://nestjs.com/" target='_blank'>Nest.js</a>.
+                          className={s.about__link} href="components/MainPage/sections/About" target='_blank'>React</a>, <a
+                          className={s.about__link} href="components/MainPage/sections/About" target='_blank'>TypeScript</a> и <a
+                          className={s.about__link} href="components/MainPage/sections/About" target='_blank'>Nest.js</a>.
                             С большим интересом подхожу к изучению новых технологий, а так же всегда забочусь
                             о качестве и масштабируемости своего кода.
                         </motion.p>

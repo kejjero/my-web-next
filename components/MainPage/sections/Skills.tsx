@@ -1,12 +1,12 @@
-import section from "../scss/modules/section.module.scss"
-import skills from "../scss/modules/skills.module.scss"
-import TopSection from "../components/TopSection"
+import section from "../../../scss/modules/section.module.scss"
+import skills from "../../../scss/modules/skills.module.scss"
+import TopSection from "../../TopSection"
 import React, {useEffect, useState} from "react"
-import {SKILLS} from "../utils/constants"
+import {SKILLS} from "../../../utils/constants"
 import { motion } from "framer-motion"
 import { Radio } from 'antd'
 import 'antd/dist/antd.css'
-import SwiperSkills from "../components/SwiperSkills";
+import SwiperSkills from "../../SwiperSkills";
 
 const Skills: React.FC = () => {
     const buttons  = [{title: "Frontend"}, {title: "Backend"}, {title: "Graphics"}]

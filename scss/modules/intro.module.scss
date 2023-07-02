@@ -20,7 +20,6 @@
     overflow: hidden;
   }
 
-
   &__wrapper {
     margin: 0 auto;
     max-width: 1280px;
@@ -29,6 +28,7 @@
     justify-content: space-between;
     gap: 100px;
     width: calc(100% - 2 * 24px);
+    min-height: 550px;
 
     @media screen and (max-width: 1150px) {
       gap: 40px;
@@ -58,12 +58,12 @@
   }
 
   &__title {
+    letter-spacing: -1px;
     margin: 0;
     padding: 0;
-    letter-spacing: 0.56px;
-    font-weight: 400;
-    font-size: 62px;
-    line-height: 74px;
+    font-weight: 500;
+    font-size: 58px;
+    line-height: 72px;
     max-width: 570px;
     color: #161513;
     vertical-align: middle;
@@ -102,13 +102,10 @@
   }
 
   &__avatar {
-    object-fit: cover;
-    border-radius: 50%;
-
-    @media screen and (max-width: 520px) {
-      border-radius: 0;
-      margin-bottom: 20px !important;
-    }
+    position: absolute;
+    max-width: 550px;
+    right: 100px;
+    top: 40px;
   }
 
   &__buttons {
@@ -123,9 +120,9 @@
     list-style-type: none;
     font-size: 23px;
     line-height: 32px;
-    letter-spacing: 0.48px;
+    letter-spacing: -0.2px;
     color: #161513;
-    font-weight: 200;
+    font-weight: 400;
 
     @media screen and (max-width: 1150px) {
       font-size: 20px;
@@ -175,7 +172,7 @@
     position: absolute !important;
     box-sizing: border-box;
     margin-top: 150px;
-    height: 65px;
+    height: 70px;
     width: 105% !important;
     top: -50px;
     left: -10px;
@@ -200,10 +197,10 @@
       text-transform: uppercase;
       color: #fff;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       font-size: 25px;
       line-height: 32px;
-      letter-spacing: 1px;
+      letter-spacing: -0.4px;
 
       @media screen and (max-width: 1024px) {
         font-size: 20px;

@@ -7,9 +7,9 @@
 
   &__wrapper {
     max-width: 640px;
-    margin: 60px auto 85px auto;
+    padding: 60px 0 85px 0;
     width: calc(100% - 2 * 24px);
-    padding: 10px;
+    margin: 0 auto;
 
     @media screen and (max-width: 768px) {
       width: calc(100% - 2 * 8px);
@@ -91,6 +91,7 @@
     right: -94px;
     top: 25%;
     z-index: 1;
+    max-width: 1920px;
 
     @media screen and (max-width: 640px) {
       display: none;

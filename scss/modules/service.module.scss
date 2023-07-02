@@ -90,10 +90,12 @@
   }
 
   &__link {
+    transition: color ease-in-out 0.1s;
     color: #4B98F2;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
+      color: #e83535;
       text-decoration: underline;
     }
   }

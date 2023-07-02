@@ -1,12 +1,11 @@
-import s from "../scss/modules/header.module.scss"
+import s from "./header.module.scss"
 import Image from "next/image";
-import logo from "../images/logo.svg"
+import logo from "../../images/logo.svg"
 import React from "react";
 import Link from "next/link";
-import {Menu} from "./menu/Menu";
+import {Menu} from "../menu/Menu";
 
-const Header: React.FC<any> = () => {
-
+const Header = () => {
     return (
         <header className={s.header}>
                 <div className={s.header__wrapper}>

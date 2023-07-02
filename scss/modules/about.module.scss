@@ -3,7 +3,7 @@
   padding: 140px 0 0;
   width: calc(100% - 2 * 24px);
   max-width: 1060px;
-  margin: 0 40px;
+  margin: 0 auto;
   box-sizing: border-box;
 
   @media screen and (max-width: 520px) {
@@ -55,21 +55,20 @@
   &__title {
     margin: 0;
     padding: 0;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 23px;
     line-height: 32px;
-    letter-spacing: 0.48px;
+    letter-spacing: -0.2px;
     color: #161513;
-
   }
 
   &__subtitle {
     margin: 0;
     padding: 0;
-    font-weight: 400;
-    font-size: 56px;
-    line-height: 70px;
-    letter-spacing: 0.56px;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: -0.2px;
     color: #161513;
     max-width: 280px;
 
@@ -83,23 +82,22 @@
   &__titleAbout {
     margin: 0;
     padding: 0;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 31px;
     line-height: 40px;
-    letter-spacing: 0.64px;
+    letter-spacing: -0.4px;
   }
 
   &__paragraph {
-    margin: 10px 0  0;
-    font-weight: 300;
+    margin: 10px 0 0;
+    font-weight: 400;
     font-size: 18px;
     line-height: 32px;
-    letter-spacing: 0.2px;
-    color: #232322;
+    letter-spacing: -0.2px;
+    color: #444444;
   }
 
   &__link {
-    font-weight: 300;
     color: #4B98F2;
     text-decoration: underline;
 
@@ -110,7 +108,6 @@
   }
 
   &__exude {
-    font-weight: 400;
     color: #4B98F2;
   }
 

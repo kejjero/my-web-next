@@ -1,16 +1,16 @@
-import contacts from "../scss/modules/contacts.module.scss"
-import TopSection from "../components/TopSection"
-import hash from "../images/hash.svg"
+import contacts from "../../../scss/modules/contacts.module.scss"
+import TopSection from "../../TopSection"
+import hash from "../../../images/hash.svg"
 import Image from "next/image"
 import React, {memo, useEffect, useRef, useState} from "react"
 import {motion} from "framer-motion"
-import s from "../scss/modules/contacts.module.scss"
+import s from "../../../scss/modules/contacts.module.scss"
 import 'antd/dist/antd.css'
 import {Form, Input, Popover, message} from 'antd'
 import {Button} from 'antd'
 import emailjs from '@emailjs/browser'
 import ReCAPTCHA from "react-google-recaptcha"
-import {config} from "../config";
+import {config} from "../../../config";
 
 
 const Contacts: React.FC = () => {

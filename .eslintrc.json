@@ -1,0 +1,59 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-console": "error",
+    "react/display-name": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          ["parent", "sibling", "index", "object"]
+        ],
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "builtin"
+          },
+          {
+            "pattern": "@testing-library",
+            "group": "builtin"
+          },
+          {
+            "pattern": "next",
+            "group": "builtin"
+          },
+          {
+            "pattern": "pages/",
+            "group": "internal"
+          },
+          {
+            "pattern": "components/",
+            "group": "internal"
+          }
+        ]
+      }
+    ]
+  },
+  "overrides": [{
+    "files": ["**/components/**/*.{test,stories}.{ts,tsx}"],
+    "rules": {
+      "import/order": "off"
+    }
+  },
+    {
+      "files": ["**/{stores,providers,hooks}/**/*.{ts,tsx}"],
+      "rules": {
+        "import/order": "off",
+        "no-console": "warn"
+      }
+    }
+  ]
+}

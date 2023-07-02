@@ -1,10 +1,10 @@
-import section from "../scss/modules/section.module.scss";
-import portfolio from "../scss/modules/portfolio.module.scss"
-import TopSection from "../components/TopSection";
-import Work from "../components/Work";
-import {works} from "../utils/constants"
+import section from "../../../scss/modules/section.module.scss";
+import portfolio from "../../../scss/modules/portfolio.module.scss"
+import TopSection from "../../TopSection";
+import Work from "../../Work";
+import {works} from "../../../utils/constants"
 import React, {useEffect, useState} from "react";
-import skills from "../scss/modules/skills.module.scss";
+import skills from "../../../scss/modules/skills.module.scss";
 import { motion } from "framer-motion";
 import {Radio} from "antd";
 

@@ -1,9 +1,9 @@
-import service from "../scss/modules/service.module.scss"
-import TopSection from "../components/TopSection";
-import CardService from "../components/CardService";
+import service from "../../../scss/modules/service.module.scss"
+import TopSection from "../../TopSection";
+import CardService from "../../CardService";
 import React from "react";
 import {motion} from "framer-motion";
-import s from "../scss/modules/service.module.scss";
+import s from "../../../scss/modules/service.module.scss";
 
 const Service: React.FC = () => {
   const cards = [
@@ -27,7 +27,7 @@ const Service: React.FC = () => {
       title: <h4 className={s.service__cardTitle}>Full Stack</h4>,
       text: <p className={s.service__cardText}>Готов взяться за Full Stack проект под ключ с отрисовкой
         дизайна, создания сервера и веб-интерфейса. Так же владею навыками сборки, настройки и развёртывания приложений
-        на <a className={s.service__link} href="https://thecode.media/ubuntu-linux/" target="_blank">Ubuntu</a>.</p>
+        на <a className={s.service__link} href="components/MainPage/sections/Service" target="_blank">Ubuntu</a>.</p>
     },
     {
       title: <h4 className={s.service__cardTitle}>Graphics</h4>,
